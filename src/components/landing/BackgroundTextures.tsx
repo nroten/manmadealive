@@ -1,54 +1,40 @@
 // Rugged masculine background texture components
 
-// Topography/Terrain Lines Pattern
-export const TopographyPattern = ({ className = "" }: { className?: string }) => (
+// Topography/Terrain Lines Pattern - More detailed and visible
+export const TopographyPattern = ({ className = "", style = {} }: { className?: string; style?: React.CSSProperties }) => (
   <svg 
     className={`absolute inset-0 w-full h-full ${className}`}
+    style={style}
     xmlns="http://www.w3.org/2000/svg"
     preserveAspectRatio="xMidYMid slice"
   >
     <defs>
-      <pattern id="topo-lines" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
-        {/* Terrain contour lines */}
-        <path 
-          d="M0 50 Q50 30 100 50 T200 50" 
-          fill="none" 
-          stroke="currentColor" 
-          strokeWidth="0.5"
-          opacity="0.15"
-        />
-        <path 
-          d="M0 80 Q60 60 120 85 T200 75" 
-          fill="none" 
-          stroke="currentColor" 
-          strokeWidth="0.5"
-          opacity="0.1"
-        />
-        <path 
-          d="M0 120 Q40 100 80 125 T160 110 T200 120" 
-          fill="none" 
-          stroke="currentColor" 
-          strokeWidth="0.5"
-          opacity="0.12"
-        />
-        <path 
-          d="M0 160 Q70 140 140 165 T200 155" 
-          fill="none" 
-          stroke="currentColor" 
-          strokeWidth="0.5"
-          opacity="0.08"
-        />
-        <path 
-          d="M0 190 Q50 175 100 195 T200 185" 
-          fill="none" 
-          stroke="currentColor" 
-          strokeWidth="0.5"
-          opacity="0.1"
-        />
-        {/* Elevation markers */}
-        <circle cx="45" cy="45" r="1" fill="currentColor" opacity="0.1" />
-        <circle cx="150" cy="100" r="1.5" fill="currentColor" opacity="0.08" />
-        <circle cx="80" cy="160" r="1" fill="currentColor" opacity="0.1" />
+      <pattern id="topo-lines" x="0" y="0" width="300" height="300" patternUnits="userSpaceOnUse">
+        {/* Dense terrain contour lines - like a real topographic map */}
+        <path d="M0 20 Q75 5 150 25 T300 15" fill="none" stroke="currentColor" strokeWidth="0.8" opacity="0.25" />
+        <path d="M0 35 Q100 20 200 40 T300 30" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.18" />
+        <path d="M0 55 Q50 40 100 60 T200 50 T300 55" fill="none" stroke="currentColor" strokeWidth="0.7" opacity="0.22" />
+        <path d="M0 75 Q80 60 160 80 T300 70" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.16" />
+        <path d="M0 95 Q60 80 120 100 T240 90 T300 95" fill="none" stroke="currentColor" strokeWidth="0.8" opacity="0.24" />
+        <path d="M0 115 Q90 100 180 120 T300 110" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.15" />
+        <path d="M0 135 Q40 120 80 140 T160 130 T240 145 T300 135" fill="none" stroke="currentColor" strokeWidth="0.7" opacity="0.2" />
+        <path d="M0 160 Q70 145 140 165 T280 155 T300 160" fill="none" stroke="currentColor" strokeWidth="0.6" opacity="0.18" />
+        <path d="M0 185 Q100 170 200 190 T300 180" fill="none" stroke="currentColor" strokeWidth="0.8" opacity="0.22" />
+        <path d="M0 210 Q50 195 100 215 T200 205 T300 210" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.14" />
+        <path d="M0 235 Q80 220 160 240 T300 230" fill="none" stroke="currentColor" strokeWidth="0.7" opacity="0.2" />
+        <path d="M0 260 Q60 245 120 265 T240 255 T300 260" fill="none" stroke="currentColor" strokeWidth="0.6" opacity="0.16" />
+        <path d="M0 285 Q90 270 180 290 T300 280" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.18" />
+        
+        {/* Elevation markers / peaks */}
+        <circle cx="75" cy="85" r="2" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.2" />
+        <circle cx="75" cy="85" r="4" fill="none" stroke="currentColor" strokeWidth="0.3" opacity="0.12" />
+        <circle cx="220" cy="180" r="2.5" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.18" />
+        <circle cx="220" cy="180" r="5" fill="none" stroke="currentColor" strokeWidth="0.3" opacity="0.1" />
+        <circle cx="140" cy="250" r="1.5" fill="none" stroke="currentColor" strokeWidth="0.4" opacity="0.15" />
+        
+        {/* Small elevation triangles */}
+        <polygon points="75,82 77,88 73,88" fill="currentColor" opacity="0.12" />
+        <polygon points="220,177 222,183 218,183" fill="currentColor" opacity="0.1" />
       </pattern>
     </defs>
     <rect width="100%" height="100%" fill="url(#topo-lines)" />
