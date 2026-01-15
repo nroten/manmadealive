@@ -1,6 +1,6 @@
 // Rugged masculine background texture components
 
-// Topography/Terrain Lines Pattern - Circular mountain contours like real topo maps
+// Topography/Terrain Lines Pattern - Realistic mountainous contours with organic flowing lines
 export const TopographyPattern = ({ className = "", style = {} }: { className?: string; style?: React.CSSProperties }) => (
   <svg 
     className={`absolute inset-0 w-full h-full ${className}`}
@@ -9,34 +9,52 @@ export const TopographyPattern = ({ className = "", style = {} }: { className?: 
     preserveAspectRatio="xMidYMid slice"
   >
     <defs>
-      <pattern id="topo-mountain" x="0" y="0" width="500" height="500" patternUnits="userSpaceOnUse">
-        {/* Primary mountain peak - organic concentric contours */}
-        <path d="M250,250 Q280,230 300,250 Q320,280 300,310 Q270,340 240,320 Q200,290 220,260 Q240,240 250,250" fill="none" stroke="currentColor" strokeWidth="0.8" opacity="0.3" />
-        <path d="M250,245 Q290,215 320,245 Q350,290 310,340 Q260,380 210,340 Q170,290 200,250 Q230,220 250,245" fill="none" stroke="currentColor" strokeWidth="0.7" opacity="0.25" />
-        <path d="M250,235 Q305,195 345,240 Q385,300 330,365 Q260,420 190,360 Q140,295 185,240 Q225,195 250,235" fill="none" stroke="currentColor" strokeWidth="0.8" opacity="0.22" />
-        <path d="M250,220 Q320,170 375,230 Q430,310 355,395 Q265,470 170,390 Q100,305 165,225 Q220,160 250,220" fill="none" stroke="currentColor" strokeWidth="0.6" opacity="0.18" />
-        <path d="M250,200 Q340,140 410,215 Q480,320 385,430 Q270,530 145,420 Q55,310 140,205 Q210,120 250,200" fill="none" stroke="currentColor" strokeWidth="0.7" opacity="0.15" />
-        
-        {/* Secondary peak - upper left */}
-        <path d="M100,120 Q115,105 135,115 Q150,130 140,150 Q125,165 105,155 Q85,140 95,125 Q100,115 100,120" fill="none" stroke="currentColor" strokeWidth="0.6" opacity="0.28" />
-        <path d="M100,110 Q125,90 155,105 Q180,130 165,165 Q140,195 100,180 Q65,155 75,120 Q85,95 100,110" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.22" />
-        <path d="M100,95 Q140,65 180,90 Q220,130 195,185 Q155,235 95,210 Q40,175 55,115 Q70,65 100,95" fill="none" stroke="currentColor" strokeWidth="0.6" opacity="0.16" />
-        
-        {/* Third peak - lower right */}
-        <path d="M420,380 Q440,365 455,380 Q470,400 455,420 Q435,440 415,425 Q395,405 405,385 Q415,370 420,380" fill="none" stroke="currentColor" strokeWidth="0.7" opacity="0.26" />
-        <path d="M420,365 Q450,340 480,365 Q510,400 485,440 Q450,475 405,450 Q365,415 380,375 Q400,345 420,365" fill="none" stroke="currentColor" strokeWidth="0.6" opacity="0.2" />
-        <path d="M420,345 Q465,305 510,345 Q555,400 515,465 Q460,520 390,480 Q325,430 355,365 Q385,310 420,345" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.14" />
-        
-        {/* Flowing contour lines connecting peaks */}
-        <path d="M0,80 Q80,50 160,75 Q240,100 320,70 Q400,40 500,65" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.12" />
-        <path d="M0,160 Q100,130 200,155 Q300,180 400,150 Q450,135 500,145" fill="none" stroke="currentColor" strokeWidth="0.6" opacity="0.1" />
-        <path d="M0,420 Q80,450 160,430 Q240,410 320,440 Q400,470 500,445" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.1" />
-        <path d="M0,480 Q120,450 240,475 Q360,500 500,470" fill="none" stroke="currentColor" strokeWidth="0.6" opacity="0.08" />
-        
-        {/* Small elevation markers */}
-        <circle cx="250" cy="250" r="3" fill="currentColor" opacity="0.15" />
-        <circle cx="100" cy="120" r="2" fill="currentColor" opacity="0.12" />
-        <circle cx="420" cy="380" r="2.5" fill="currentColor" opacity="0.12" />
+      <pattern id="topo-mountain" x="0" y="0" width="800" height="600" patternUnits="userSpaceOnUse">
+        <g fill="none" stroke="currentColor" strokeWidth="0.6">
+          {/* Large irregular flowing contour region - upper left */}
+          <path d="M50,80 Q90,45 140,60 Q195,40 240,70 Q280,50 330,85 Q295,120 240,100 Q180,130 120,105 Q70,125 50,80" opacity="0.25" />
+          <path d="M30,105 Q85,25 160,50 Q230,20 290,65 Q350,35 400,90 Q355,145 270,115 Q190,155 100,125 Q40,155 30,105" opacity="0.2" />
+          <path d="M10,130 Q75,5 175,35 Q275,0 350,55 Q420,15 480,85 Q430,165 310,130 Q200,185 80,145 Q15,185 10,130" opacity="0.15" />
+          
+          {/* Central complex terrain formation */}
+          <path d="M420,180 Q480,140 550,165 Q610,135 660,175 Q700,150 750,190 Q710,235 640,210 Q570,250 490,220 Q430,255 390,205 Q420,180 420,180" opacity="0.28" />
+          <path d="M390,210 Q470,120 570,155 Q660,115 720,170 Q780,135 800,195 Q760,265 655,230 Q550,285 445,245 Q375,290 340,225 Q390,210 390,210" opacity="0.22" />
+          <path d="M360,240 Q455,100 580,140 Q700,90 780,160 Q800,125 800,200 Q780,300 665,255 Q535,320 410,275 Q325,330 290,250 Q360,240 360,240" opacity="0.16" />
+          
+          {/* Flowing terrain lines - middle section */}
+          <path d="M0,280 Q100,250 200,275 Q320,245 440,270 Q560,240 680,265 Q760,250 800,270" opacity="0.18" strokeWidth="0.5" />
+          <path d="M0,310 Q120,275 250,300 Q380,265 510,295 Q640,260 750,290 Q800,280 800,305" opacity="0.15" strokeWidth="0.5" />
+          <path d="M0,345 Q90,315 180,340 Q290,305 400,335 Q520,300 640,330 Q740,305 800,340" opacity="0.12" strokeWidth="0.5" />
+          
+          {/* Lower left terrain blob */}
+          <path d="M80,380 Q130,350 190,370 Q250,340 300,380 Q340,355 385,395 Q345,430 280,410 Q210,445 140,415 Q85,445 60,395 Q80,380 80,380" opacity="0.26" />
+          <path d="M50,410 Q120,330 210,360 Q300,315 370,375 Q435,340 480,405 Q425,465 330,435 Q220,485 115,445 Q45,490 20,420 Q50,410 50,410" opacity="0.2" />
+          <path d="M20,445 Q105,305 230,345 Q355,285 450,365 Q535,315 600,400 Q525,495 385,455 Q235,525 95,475 Q5,535 0,455 L20,445" opacity="0.14" />
+          
+          {/* Upper right irregular formation */}
+          <path d="M620,70 Q665,45 715,65 Q760,40 800,75 Q800,45 800,80 Q770,115 710,95 Q650,125 600,90 Q620,70 620,70" opacity="0.24" />
+          <path d="M590,100 Q655,25 730,55 Q790,25 800,70 Q800,25 800,85 Q780,135 705,110 Q625,150 565,110 Q590,100 590,100" opacity="0.18" />
+          
+          {/* Right side winding features */}
+          <path d="M680,320 Q720,290 770,315 Q800,295 800,330 Q780,365 730,345 Q680,375 640,340 Q680,320 680,320" opacity="0.22" />
+          <path d="M650,355 Q715,270 785,305 Q800,275 800,325 Q790,395 720,365 Q645,410 590,365 Q650,355 650,355" opacity="0.16" />
+          
+          {/* Bottom flowing contours */}
+          <path d="M0,500 Q80,475 160,495 Q260,465 360,490 Q470,460 580,485 Q700,455 800,480" opacity="0.14" strokeWidth="0.5" />
+          <path d="M0,535 Q100,505 210,530 Q330,495 450,525 Q580,490 700,520 Q770,500 800,525" opacity="0.11" strokeWidth="0.5" />
+          <path d="M0,570 Q120,540 250,565 Q400,530 550,560 Q700,530 800,555" opacity="0.09" strokeWidth="0.5" />
+          
+          {/* Small detail formations scattered throughout */}
+          <path d="M280,120 Q310,100 345,115 Q375,95 400,125 Q370,150 335,135 Q295,160 270,130 Q280,120 280,120" opacity="0.2" strokeWidth="0.5" />
+          <path d="M260,145 Q305,80 365,105 Q420,75 455,120 Q415,170 355,150 Q285,185 245,145 Q260,145 260,145" opacity="0.15" strokeWidth="0.5" />
+          
+          <path d="M520,420 Q560,395 610,415 Q655,390 690,425 Q655,460 600,440 Q545,470 510,435 Q520,420 520,420" opacity="0.2" strokeWidth="0.5" />
+          <path d="M495,450 Q555,375 630,405 Q700,365 750,420 Q700,485 620,455 Q530,505 470,455 Q495,450 495,450" opacity="0.14" strokeWidth="0.5" />
+          
+          {/* Additional organic blobs */}
+          <path d="M150,200 Q185,175 225,195 Q260,170 290,205 Q260,235 220,220 Q175,245 150,210 Q150,200 150,200" opacity="0.18" strokeWidth="0.5" />
+          <path d="M130,225 Q180,160 245,185 Q305,150 350,200 Q305,255 240,230 Q165,275 120,230 Q130,225 130,225" opacity="0.12" strokeWidth="0.5" />
+        </g>
       </pattern>
     </defs>
     <rect width="100%" height="100%" fill="url(#topo-mountain)" />
