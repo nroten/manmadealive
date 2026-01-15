@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Compass, Flame, Heart } from "lucide-react";
 import PillarCard from "./PillarCard";
+import { IronTexture, WoodGrainPattern, BlueprintGrid } from "./BackgroundTextures";
 
 const pillars = [
   {
@@ -41,9 +42,19 @@ const pillars = [
 
 const PillarsSection = () => {
   return (
-    <section className="relative py-24 sm:py-32">
+    <section className="relative py-24 sm:py-32 overflow-hidden">
+      {/* Rugged texture layers */}
+      <IronTexture className="text-stone opacity-50" />
+      <WoodGrainPattern className="text-primary opacity-20" />
+      
       {/* Background accent */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/20 to-background" />
+      
+      {/* Corner iron accents */}
+      <div className="absolute top-0 left-0 w-24 h-24 border-l-2 border-t-2 border-stone/10" />
+      <div className="absolute top-0 right-0 w-24 h-24 border-r-2 border-t-2 border-stone/10" />
+      <div className="absolute bottom-0 left-0 w-24 h-24 border-l-2 border-b-2 border-stone/10" />
+      <div className="absolute bottom-0 right-0 w-24 h-24 border-r-2 border-b-2 border-stone/10" />
       
       <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
         {/* Section Header */}

@@ -1,32 +1,42 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import mmaLogo from "@/assets/mma-logo.png";
+import { TopographyPattern, KevlarPattern, ScratchedMetal } from "./BackgroundTextures";
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Rugged texture layers */}
+      <TopographyPattern className="text-stone opacity-40" />
+      <KevlarPattern className="text-foreground opacity-60" />
+      <ScratchedMetal className="text-primary opacity-30" />
+      
       {/* Animated background particles */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Cosmic blue gradient orb */}
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cosmic/20 rounded-full blur-3xl animate-pulse-glow" />
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary/10 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: '2s' }} />
         
+        {/* Iron edge accents */}
+        <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-stone/5 to-transparent" />
+        <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-stone/5 to-transparent" />
+        
         {/* Floating ember particles */}
-        {[...Array(6)].map((_, i) => (
+        {[...Array(8)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 bg-primary/40 rounded-full"
+            className="absolute w-1 h-1 bg-primary/50 rounded-full"
             style={{
-              left: `${20 + i * 12}%`,
-              top: `${30 + (i % 3) * 20}%`,
+              left: `${15 + i * 10}%`,
+              top: `${25 + (i % 4) * 15}%`,
             }}
             animate={{
               y: [-20, 20, -20],
               x: [-10, 10, -10],
-              opacity: [0.2, 0.5, 0.2],
+              opacity: [0.2, 0.6, 0.2],
             }}
             transition={{
-              duration: 6 + i * 2,
+              duration: 5 + i * 1.5,
               repeat: Infinity,
               ease: "easeInOut",
             }}
