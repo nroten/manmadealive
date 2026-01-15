@@ -1,15 +1,14 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import mmaLogo from "@/assets/mma-logo.png";
-import { TopographyPattern, KevlarPattern, ScratchedMetal } from "./BackgroundTextures";
+import { TopographyPattern } from "./BackgroundTextures";
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Rugged texture layers */}
-      <TopographyPattern className="text-stone opacity-40" />
-      <KevlarPattern className="text-foreground opacity-60" />
-      <ScratchedMetal className="text-primary opacity-30" />
+      {/* Prominent topography terrain lines */}
+      <TopographyPattern className="text-stone opacity-70" />
+      <TopographyPattern className="text-primary opacity-40" style={{ transform: 'scale(1.5) rotate(3deg)' }} />
       
       {/* Animated background particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
