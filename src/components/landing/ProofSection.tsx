@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { BookOpen, Church, Users, Target } from "lucide-react";
+import { KevlarPattern, TopographyPattern, ScratchedMetal } from "./BackgroundTextures";
 
 const credentials = [
   { icon: Church, text: "Developed by Pastor Nate, pastor of Ashe Alliance Church" },
@@ -17,8 +18,19 @@ const testimonials = [
 const ProofSection = () => {
   return (
     <section className="relative py-24 sm:py-32 overflow-hidden">
+      {/* Rugged texture layers */}
+      <KevlarPattern className="text-foreground opacity-40" />
+      <TopographyPattern className="text-primary opacity-25" />
+      
       {/* Subtle texture overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-secondary/30 via-background to-background" />
+      
+      {/* Diagonal iron stripes accent */}
+      <div className="absolute top-0 right-0 w-1/3 h-full opacity-5">
+        <div className="w-full h-full" style={{
+          backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 20px, hsl(var(--stone)) 20px, hsl(var(--stone)) 21px)'
+        }} />
+      </div>
       
       <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
         {/* Section Header */}

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, ArrowRight, Mail, Gift, FileText, Calendar } from "lucide-react";
+import { BlueprintGrid, IronTexture, WoodGrainPattern } from "./BackgroundTextures";
 
 interface FormStep {
   question: string;
@@ -61,9 +62,19 @@ const ConversionForm = () => {
   const progress = ((currentStep + 1) / formSteps.length) * 100;
 
   return (
-    <section className="relative py-24 sm:py-32">
+    <section className="relative py-24 sm:py-32 overflow-hidden">
+      {/* Rugged texture layers */}
+      <BlueprintGrid className="text-primary opacity-30" />
+      <IronTexture className="text-stone opacity-40" />
+      
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-card/30 to-background" />
+      
+      {/* Corner rivets/bolts visual accents */}
+      <div className="absolute top-8 left-8 w-4 h-4 rounded-full border-2 border-stone/20 bg-secondary/30" />
+      <div className="absolute top-8 right-8 w-4 h-4 rounded-full border-2 border-stone/20 bg-secondary/30" />
+      <div className="absolute bottom-8 left-8 w-4 h-4 rounded-full border-2 border-stone/20 bg-secondary/30" />
+      <div className="absolute bottom-8 right-8 w-4 h-4 rounded-full border-2 border-stone/20 bg-secondary/30" />
       
       <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">
