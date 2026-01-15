@@ -1,6 +1,6 @@
 // Rugged masculine background texture components
 
-// Topography/Terrain Lines Pattern - More detailed and visible
+// Topography/Terrain Lines Pattern - Circular mountain contours like real topo maps
 export const TopographyPattern = ({ className = "", style = {} }: { className?: string; style?: React.CSSProperties }) => (
   <svg 
     className={`absolute inset-0 w-full h-full ${className}`}
@@ -9,35 +9,37 @@ export const TopographyPattern = ({ className = "", style = {} }: { className?: 
     preserveAspectRatio="xMidYMid slice"
   >
     <defs>
-      <pattern id="topo-lines" x="0" y="0" width="300" height="300" patternUnits="userSpaceOnUse">
-        {/* Dense terrain contour lines - like a real topographic map */}
-        <path d="M0 20 Q75 5 150 25 T300 15" fill="none" stroke="currentColor" strokeWidth="0.8" opacity="0.25" />
-        <path d="M0 35 Q100 20 200 40 T300 30" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.18" />
-        <path d="M0 55 Q50 40 100 60 T200 50 T300 55" fill="none" stroke="currentColor" strokeWidth="0.7" opacity="0.22" />
-        <path d="M0 75 Q80 60 160 80 T300 70" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.16" />
-        <path d="M0 95 Q60 80 120 100 T240 90 T300 95" fill="none" stroke="currentColor" strokeWidth="0.8" opacity="0.24" />
-        <path d="M0 115 Q90 100 180 120 T300 110" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.15" />
-        <path d="M0 135 Q40 120 80 140 T160 130 T240 145 T300 135" fill="none" stroke="currentColor" strokeWidth="0.7" opacity="0.2" />
-        <path d="M0 160 Q70 145 140 165 T280 155 T300 160" fill="none" stroke="currentColor" strokeWidth="0.6" opacity="0.18" />
-        <path d="M0 185 Q100 170 200 190 T300 180" fill="none" stroke="currentColor" strokeWidth="0.8" opacity="0.22" />
-        <path d="M0 210 Q50 195 100 215 T200 205 T300 210" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.14" />
-        <path d="M0 235 Q80 220 160 240 T300 230" fill="none" stroke="currentColor" strokeWidth="0.7" opacity="0.2" />
-        <path d="M0 260 Q60 245 120 265 T240 255 T300 260" fill="none" stroke="currentColor" strokeWidth="0.6" opacity="0.16" />
-        <path d="M0 285 Q90 270 180 290 T300 280" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.18" />
+      <pattern id="topo-mountain" x="0" y="0" width="500" height="500" patternUnits="userSpaceOnUse">
+        {/* Primary mountain peak - organic concentric contours */}
+        <path d="M250,250 Q280,230 300,250 Q320,280 300,310 Q270,340 240,320 Q200,290 220,260 Q240,240 250,250" fill="none" stroke="currentColor" strokeWidth="0.8" opacity="0.3" />
+        <path d="M250,245 Q290,215 320,245 Q350,290 310,340 Q260,380 210,340 Q170,290 200,250 Q230,220 250,245" fill="none" stroke="currentColor" strokeWidth="0.7" opacity="0.25" />
+        <path d="M250,235 Q305,195 345,240 Q385,300 330,365 Q260,420 190,360 Q140,295 185,240 Q225,195 250,235" fill="none" stroke="currentColor" strokeWidth="0.8" opacity="0.22" />
+        <path d="M250,220 Q320,170 375,230 Q430,310 355,395 Q265,470 170,390 Q100,305 165,225 Q220,160 250,220" fill="none" stroke="currentColor" strokeWidth="0.6" opacity="0.18" />
+        <path d="M250,200 Q340,140 410,215 Q480,320 385,430 Q270,530 145,420 Q55,310 140,205 Q210,120 250,200" fill="none" stroke="currentColor" strokeWidth="0.7" opacity="0.15" />
         
-        {/* Elevation markers / peaks */}
-        <circle cx="75" cy="85" r="2" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.2" />
-        <circle cx="75" cy="85" r="4" fill="none" stroke="currentColor" strokeWidth="0.3" opacity="0.12" />
-        <circle cx="220" cy="180" r="2.5" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.18" />
-        <circle cx="220" cy="180" r="5" fill="none" stroke="currentColor" strokeWidth="0.3" opacity="0.1" />
-        <circle cx="140" cy="250" r="1.5" fill="none" stroke="currentColor" strokeWidth="0.4" opacity="0.15" />
+        {/* Secondary peak - upper left */}
+        <path d="M100,120 Q115,105 135,115 Q150,130 140,150 Q125,165 105,155 Q85,140 95,125 Q100,115 100,120" fill="none" stroke="currentColor" strokeWidth="0.6" opacity="0.28" />
+        <path d="M100,110 Q125,90 155,105 Q180,130 165,165 Q140,195 100,180 Q65,155 75,120 Q85,95 100,110" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.22" />
+        <path d="M100,95 Q140,65 180,90 Q220,130 195,185 Q155,235 95,210 Q40,175 55,115 Q70,65 100,95" fill="none" stroke="currentColor" strokeWidth="0.6" opacity="0.16" />
         
-        {/* Small elevation triangles */}
-        <polygon points="75,82 77,88 73,88" fill="currentColor" opacity="0.12" />
-        <polygon points="220,177 222,183 218,183" fill="currentColor" opacity="0.1" />
+        {/* Third peak - lower right */}
+        <path d="M420,380 Q440,365 455,380 Q470,400 455,420 Q435,440 415,425 Q395,405 405,385 Q415,370 420,380" fill="none" stroke="currentColor" strokeWidth="0.7" opacity="0.26" />
+        <path d="M420,365 Q450,340 480,365 Q510,400 485,440 Q450,475 405,450 Q365,415 380,375 Q400,345 420,365" fill="none" stroke="currentColor" strokeWidth="0.6" opacity="0.2" />
+        <path d="M420,345 Q465,305 510,345 Q555,400 515,465 Q460,520 390,480 Q325,430 355,365 Q385,310 420,345" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.14" />
+        
+        {/* Flowing contour lines connecting peaks */}
+        <path d="M0,80 Q80,50 160,75 Q240,100 320,70 Q400,40 500,65" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.12" />
+        <path d="M0,160 Q100,130 200,155 Q300,180 400,150 Q450,135 500,145" fill="none" stroke="currentColor" strokeWidth="0.6" opacity="0.1" />
+        <path d="M0,420 Q80,450 160,430 Q240,410 320,440 Q400,470 500,445" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.1" />
+        <path d="M0,480 Q120,450 240,475 Q360,500 500,470" fill="none" stroke="currentColor" strokeWidth="0.6" opacity="0.08" />
+        
+        {/* Small elevation markers */}
+        <circle cx="250" cy="250" r="3" fill="currentColor" opacity="0.15" />
+        <circle cx="100" cy="120" r="2" fill="currentColor" opacity="0.12" />
+        <circle cx="420" cy="380" r="2.5" fill="currentColor" opacity="0.12" />
       </pattern>
     </defs>
-    <rect width="100%" height="100%" fill="url(#topo-lines)" />
+    <rect width="100%" height="100%" fill="url(#topo-mountain)" />
   </svg>
 );
 
