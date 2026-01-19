@@ -5,8 +5,8 @@ interface PillarCardProps {
   pillarNumber: number;
   title: string;
   problem: string;
+  solution: string;
   outcome: string;
-  result: string[];
   icon: LucideIcon;
   delay?: number;
 }
@@ -15,8 +15,8 @@ const PillarCard = ({
   pillarNumber, 
   title, 
   problem, 
+  solution,
   outcome, 
-  result, 
   icon: Icon,
   delay = 0 
 }: PillarCardProps) => {
@@ -48,39 +48,34 @@ const PillarCard = ({
           {title}
         </h3>
 
-        {/* The Problem */}
+        {/* The Problem You're Facing */}
         <div className="mb-8">
           <h4 className="font-sans text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-3">
-            The Problem
+            The Problem You're Facing
           </h4>
           <p className="font-sans text-base leading-relaxed text-muted-foreground">
             {problem}
           </p>
         </div>
 
-        {/* The Outcome */}
+        {/* How MMA Helps */}
         <div className="mb-8">
           <h4 className="font-sans text-sm font-semibold uppercase tracking-widest text-primary mb-3">
-            The Outcome
+            How MMA Helps
           </h4>
           <p className="font-sans text-base leading-relaxed text-foreground">
-            {outcome}
+            {solution}
           </p>
         </div>
 
-        {/* Result */}
+        {/* The Outcome */}
         <div className="pt-6 border-t border-border/50">
           <h4 className="font-sans text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-3">
-            Result
+            The Outcome
           </h4>
-          <ul className="space-y-2">
-            {result.map((item, idx) => (
-              <li key={idx} className="font-sans text-base text-foreground flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                {item}
-              </li>
-            ))}
-          </ul>
+          <p className="font-sans text-base leading-relaxed text-foreground italic">
+            {outcome}
+          </p>
         </div>
 
         {/* Hover glow effect */}
