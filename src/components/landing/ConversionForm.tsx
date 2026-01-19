@@ -4,34 +4,57 @@ import { Button } from "@/components/ui/button";
 import { CheckCircle2, ArrowRight, Mail, Gift, FileText, Calendar } from "lucide-react";
 import { BlueprintGrid, IronTexture, WoodGrainPattern } from "./BackgroundTextures";
 
+interface FormOption {
+  label: string;
+  description: string;
+  value: string;
+}
+
 interface FormStep {
   question: string;
-  options: { label: string; value: string }[];
+  options: FormOption[];
 }
 
 const formSteps: FormStep[] = [
   {
-    question: "Which best describes you right now?",
+    question: "Which best describes where you are right now?",
     options: [
-      { label: "Carrying responsibility but lacking clarity", value: "clarity" },
-      { label: "Disciplined in some areas, inconsistent in others", value: "discipline" },
-      { label: "Faith is important, but not fully forming my life", value: "faith" },
+      { 
+        label: "Carrying responsibility but lacking biblical clarity", 
+        description: "I know I need to lead, but I don't know what I'm aiming at",
+        value: "clarity" 
+      },
+      { 
+        label: "Disciplined in some areas, but struggling to sustain it", 
+        description: "My follow-through is inconsistent and it's discouraging",
+        value: "discipline" 
+      },
+      { 
+        label: "My faith is important, but it's not fully shaping how I live", 
+        description: "I believe the right things, but something's missing in how I lead and love",
+        value: "faith" 
+      },
+      { 
+        label: "I'm growing, but I'm doing it alone", 
+        description: "I need brothers who understand what I'm facing",
+        value: "brotherhood" 
+      },
     ],
   },
   {
     question: "What do you want most right now?",
     options: [
-      { label: "Clear direction", value: "direction" },
-      { label: "Sustainable discipline", value: "sustainable" },
-      { label: "Brotherhood and accountability", value: "brotherhood" },
-      { label: "All of the above", value: "all" },
+      { label: "Clear direction", description: "", value: "direction" },
+      { label: "Sustainable discipline", description: "", value: "sustainable" },
+      { label: "Brotherhood and accountability", description: "", value: "brotherhood" },
+      { label: "All of the above", description: "", value: "all" },
     ],
   },
   {
     question: "Are you willing to slow down and train rather than rush for results?",
     options: [
-      { label: "Yes", value: "yes" },
-      { label: "I want to learn how", value: "learn" },
+      { label: "Yes", description: "", value: "yes" },
+      { label: "I want to learn how", description: "", value: "learn" },
     ],
   },
 ];
@@ -87,11 +110,11 @@ const ConversionForm = () => {
             className="text-center mb-12"
           >
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-              Begin with{" "}
-              <span className="text-gradient-ember">One Honest Step</span>
+              Take One Honest Step{" "}
+              <span className="text-gradient-ember">Forward</span>
             </h2>
-            <p className="font-sans text-lg text-muted-foreground">
-              This isn't for everyone. It's for men ready to stop drifting and start training—faithfully.
+            <p className="font-sans text-lg text-muted-foreground max-w-2xl mx-auto">
+              This pathway isn't for everyone. It's for men who are ready to stop drifting and start training—faithfully, biblically, and alongside brothers in Christ.
             </p>
           </motion.div>
 
@@ -116,7 +139,7 @@ const ConversionForm = () => {
                   <div className="mb-8">
                     <div className="flex justify-between items-center mb-2">
                       <span className="font-sans text-sm text-muted-foreground">
-                        Step {currentStep + 1} of {formSteps.length}
+                        Step {currentStep + 1} of {formSteps.length} – Takes less than 60 seconds
                       </span>
                       <span className="font-sans text-sm text-primary">
                         {Math.round(progress)}%
@@ -145,11 +168,18 @@ const ConversionForm = () => {
                         onClick={() => handleSelect(option.value)}
                         className="w-full text-left p-5 bg-secondary/50 border border-border/50 rounded-lg hover:border-primary/50 hover:bg-secondary transition-all duration-300 group"
                       >
-                        <div className="flex items-center justify-between">
-                          <span className="font-sans text-base text-foreground group-hover:text-primary transition-colors">
-                            {option.label}
-                          </span>
-                          <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
+                        <div className="flex items-start justify-between gap-4">
+                          <div className="flex-1">
+                            <span className="font-sans text-base font-medium text-foreground group-hover:text-primary transition-colors block">
+                              {option.label}
+                            </span>
+                            {option.description && (
+                              <span className="font-sans text-sm text-muted-foreground mt-1 block">
+                                {option.description}
+                              </span>
+                            )}
+                          </div>
+                          <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all flex-shrink-0 mt-0.5" />
                         </div>
                       </button>
                     ))}
