@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import mmaLogo from "@/assets/mma-logo.png";
 import { GLSLHills } from "./GLSLHills";
 import { Button } from "@/components/ui/button";
+import { TopographyPattern, IronTexture } from "./BackgroundTextures";
 
 const HeroSection = () => {
   return (
@@ -53,8 +54,31 @@ const HeroSection = () => {
       </section>
 
       {/* Content Section Below the Hills */}
-      <section className="relative bg-background py-20 sm:py-28 lg:py-32">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative bg-background py-20 sm:py-28 lg:py-32 overflow-hidden">
+        {/* Layered Masculine Background Textures */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Subtle gradient overlay from top */}
+          <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
+          
+          {/* Topography pattern for rugged terrain feel */}
+          <TopographyPattern className="text-primary opacity-60" />
+          
+          {/* Iron texture for industrial strength */}
+          <IronTexture className="text-muted-foreground opacity-40" />
+          
+          {/* Warm ember glow accent at center */}
+          <div 
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] rounded-full opacity-[0.08]"
+            style={{
+              background: 'radial-gradient(ellipse at center, hsl(var(--primary)) 0%, transparent 70%)'
+            }}
+          />
+          
+          {/* Edge vignette for depth */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,hsl(var(--background))_100%)]" />
+        </div>
+        
+        <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
