@@ -1,42 +1,40 @@
 import { motion } from "framer-motion";
-import { Compass, Flame, Heart } from "lucide-react";
+import { Compass, Flame, Heart, Users } from "lucide-react";
 import PillarCard from "./PillarCard";
-import { IronTexture, WoodGrainPattern, BlueprintGrid } from "./BackgroundTextures";
+import { IronTexture, WoodGrainPattern } from "./BackgroundTextures";
 
 const pillars = [
   {
     pillarNumber: 1,
     title: "Responsibility Without Clarity",
-    problem: "You're carrying weight—at work, at home, in your faith—but no one ever taught you what biblical manhood actually looks like. You feel pressure without direction, strength without alignment.",
-    outcome: "MMA gives you clarity. Not cultural masculinity. Not vague spirituality. A biblical vision of manhood rooted in Christ—so you know what you're aiming at and why it matters.",
-    result: [
-      "Confidence replaces confusion",
-      "Responsibility gains direction"
-    ],
+    problem: "You're carrying weight—leading at work, serving at home, showing up at church—but no one ever taught you what biblical manhood actually looks like. You feel the pressure of responsibility without the clarity of direction. You have strength, but you don't know where to aim it.",
+    solution: "Man Made Alive gives you a biblical vision of manhood rooted in Christ—not cultural masculinity, not vague spirituality, but clarity drawn from Scripture and shaped by the Holy Spirit. You'll learn the four concrete arenas where biblical manhood is actually lived: Shield, Shepherd, Supply, and Sacrifice. You'll know exactly where to focus and how to lead faithfully.",
+    outcome: "Confidence replaces confusion. Responsibility gains direction. You lead with purpose instead of pressure.",
     icon: Compass,
   },
   {
     pillarNumber: 2,
     title: "Discipline That Doesn't Last",
-    problem: "You've tried harder. You've made commitments. You've burned out. Willpower fades. Motivation fluctuates. Shame creeps in.",
-    outcome: "MMA teaches training, not trying. You learn how real formation happens—through small, faithful practices that align your life with the new life you've already been given in Christ.",
-    result: [
-      "Discipline becomes sustainable",
-      "Return replaces quitting"
-    ],
+    problem: "You've tried harder. You've made commitments—to pray more, lead better, be present. But willpower fades. Motivation fluctuates. Discipline collapses under the weight of real life, and shame quietly creeps in.",
+    solution: "MMA teaches training, not trying. You'll learn how real spiritual formation happens—not through bursts of intensity, but through small, faithful rhythms that align your life with the new life you've already been given in Christ. Discipline becomes a sustainable practice, not a burden. And when you stumble, you'll learn how to return, not restart.",
+    outcome: "Discipline becomes sustainable. Shame loses its grip. When you stumble, you return instead of quitting.",
     icon: Flame,
   },
   {
     pillarNumber: 3,
     title: "Faith Without Formation",
-    problem: "You believe the right things—but your faith hasn't fully shaped how you live. Leadership feels heavy. Growth feels lonely. You know something more is possible.",
-    outcome: "MMA offers formation, not performance. A pathway where Scripture, prayer, and the work of the Holy Spirit shape your instincts over time—alongside other men walking the same road.",
-    result: [
-      "Faith becomes embodied",
-      "Strength serves others",
-      "God is glorified"
-    ],
+    problem: "You believe the right things. You go to church. You pray. But your faith hasn't fully shaped how you live, lead, or love. Leadership feels heavy. Spiritual growth feels lonely. You know something more is possible—but you're not sure how to get there.",
+    solution: "MMA offers a formation pathway where Scripture, prayer, and the work of the Holy Spirit shape your instincts over time—not in isolation, but alongside other men walking the same road. This isn't about performing better. It's about being formed into the image of Christ so your strength serves others and your life glorifies God.",
+    outcome: "Your faith becomes embodied. Strength serves instead of strains. You experience the joy of being a man fully alive in Christ—for the glory of God.",
     icon: Heart,
+  },
+  {
+    pillarNumber: 4,
+    title: "Growing Alone",
+    problem: "You've tried to grow on your own. You've read the books, listened to the podcasts, made the commitments—but you're doing it alone. There's no one checking in. No one to process with. No brothers who actually understand what you're facing. Isolation makes everything harder.",
+    solution: "MMA connects you with other men on the same road. Not accountability for its own sake, but real brotherhood—men who are being formed in Christ together. You'll have a place to process honestly, return when you stumble, and celebrate small faithfulness. Formation doesn't happen in isolation. It happens in relationship.",
+    outcome: "You stop fighting alone. Brotherhood replaces isolation. Growth becomes sustainable because you're walking it out alongside men who get it.",
+    icon: Users,
   },
 ];
 
@@ -66,20 +64,20 @@ const PillarsSection = () => {
           className="text-center mb-16 sm:mb-20"
         >
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-            The Three <span className="text-gradient-ember">Pillars</span> of Formation
+            The Four <span className="text-gradient-ember">Pillars</span> of Biblical Formation
           </h2>
-          <p className="font-sans text-lg text-muted-foreground max-w-2xl mx-auto">
-            Addressing the three biggest obstacles between you and the man you're called to become.
+          <p className="font-sans text-lg text-muted-foreground max-w-3xl mx-auto">
+            The four biggest obstacles standing between you and the man God is calling you to become—and how MMA addresses each one.
           </p>
         </motion.div>
 
-        {/* Pillars Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6">
+        {/* Pillars Grid - 2x2 on large screens */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
           {pillars.map((pillar, idx) => (
             <PillarCard 
               key={pillar.pillarNumber} 
               {...pillar} 
-              delay={idx * 0.15}
+              delay={idx * 0.1}
             />
           ))}
         </div>
