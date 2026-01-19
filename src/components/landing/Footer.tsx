@@ -39,8 +39,8 @@ const Footer = () => {
             className="h-16 w-auto invert brightness-75 mb-8"
           />
           
-          <p className="font-sans text-sm text-muted-foreground text-center max-w-md">
-            Man Made Alive is a formation pathway for men who want to live with clarity, discipline, and purpose—rooted in Christ.
+          <p className="font-sans text-sm text-muted-foreground text-center max-w-lg">
+            Man Made Alive is a formation pathway for Christian men who want to live with clarity, discipline, and purpose—rooted in Christ, for the glory of God.
           </p>
 
           <div className="mt-8 pt-8 border-t border-border/30 w-full max-w-md">
