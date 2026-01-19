@@ -35,7 +35,7 @@ const HeroSection = () => {
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold tracking-tight mb-6"
           >
             Become a Man{" "}
-            <span className="text-gradient-ember">Made</span>
+            <span className="text-gradient-ember">Made</span>{" "}
             <span className="text-gradient-ember">Fully Alive</span>{" "}
             in Christ
           </motion.h1>
