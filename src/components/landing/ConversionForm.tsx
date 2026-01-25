@@ -10,8 +10,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { ArrowRight, Mail, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Mail, CheckCircle2, Loader2 } from "lucide-react";
 import { BlueprintGrid, IronTexture } from "./BackgroundTextures";
+import { useToast } from "@/hooks/use-toast";
 
 interface PainPointOption {
   label: string;
@@ -51,12 +52,16 @@ const lifeStages = [
   { label: "Prefer not to say", value: "prefer-not" },
 ];
 
+const WEBHOOK_URL = "https://twelvestonepress.app.n8n.cloud/webhook-test/form-submission";
+
 const ConversionForm = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [painPoint, setPainPoint] = useState("");
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
   const [lifeStage, setLifeStage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
   const handlePainPointSelect = (value: string) => {
     setPainPoint(value);
@@ -70,11 +75,41 @@ const ConversionForm = () => {
     }
   };
 
-  const handleFinalSubmit = () => {
-    // This would integrate with ConvertKit/Mailchimp
-    // For now, we'll just show a success state
-    console.log("Form submitted:", { painPoint, firstName, email, lifeStage });
-    // In production, redirect to email confirmation or trigger API
+  const handleFinalSubmit = async () => {
+    setIsSubmitting(true);
+    
+    try {
+      const response = await fetch(WEBHOOK_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          painPoint,
+          firstName,
+          email,
+          lifeStage: lifeStage || null,
+          submittedAt: new Date().toISOString(),
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit form");
+      }
+
+      toast({
+        title: "You're in!",
+        description: "Check your inbox for your first email from Pastor Nate.",
+      });
+    } catch (error) {
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or contact support.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const progress = (currentStep / 3) * 100;
@@ -364,9 +399,19 @@ const ConversionForm = () => {
                     onClick={handleFinalSubmit}
                     size="lg"
                     className="text-lg px-8 py-6 h-auto font-sans font-semibold glow-ember hover:scale-105 transition-transform duration-300 mb-4"
+                    disabled={isSubmitting}
                   >
-                    Start My 30-Day Formation Journey
-                    <ArrowRight className="ml-2 h-5 w-5" />
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                        Submitting...
+                      </>
+                    ) : (
+                      <>
+                        Start My 30-Day Formation Journey
+                        <ArrowRight className="ml-2 h-5 w-5" />
+                      </>
+                    )}
                   </Button>
 
                   {/* Post-click note */}
