@@ -87,8 +87,9 @@ const FinalCTASection = () => {
               Already know you want ongoing formation with brothers?
             </p>
             <a 
-              href="#founding-members-waitlist" 
-              className="text-primary hover:text-primary/80 font-semibold underline underline-offset-4 transition-colors"
+              href="#" 
+              data-form="59e1609c-faee-11f0-a879-6db35601943e"
+              className="text-primary hover:text-primary/80 font-semibold underline underline-offset-4 transition-colors cursor-pointer"
             >
               Join the Founding Members Waitlist
             </a>
