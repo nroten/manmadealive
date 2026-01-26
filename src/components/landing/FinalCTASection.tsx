@@ -74,6 +74,25 @@ const FinalCTASection = () => {
               You'll walk away with a Personal Formation Charter—a personalized roadmap you'll use for years.
             </p>
           </motion.div>
+          
+          {/* Founding Members Waitlist */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="mt-12 pt-8 border-t border-border/30"
+          >
+            <p className="text-muted-foreground mb-3">
+              Already know you want ongoing formation with brothers?
+            </p>
+            <a 
+              href="#founding-members-waitlist" 
+              className="text-primary hover:text-primary/80 font-semibold underline underline-offset-4 transition-colors"
+            >
+              Join the Founding Members Waitlist
+            </a>
+          </motion.div>
         </motion.div>
       </div>
     </section>

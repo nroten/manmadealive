@@ -56,8 +56,11 @@ const faqs = [
     question: "What happens after the 30 days?",
     answer: "At the end of the 30-day email series, you'll have clarity, language, a Personal Formation Charter, and a clear pathway forward. You can continue on your own or choose to walk it alongside other men in the MMA brotherhood. There's no pressure—just an invitation to keep training faithfully.",
   },
+  {
+    question: "Can I skip the email series and join the community directly?",
+    answer: "While we recommend starting with the 30-day email series to get clarity on MMA's framework, if you're ready for ongoing brotherhood now, you can join the Founding Members Waitlist. You'll be invited first when doors open and receive a founding-member rate.",
+  },
 ];
-
 const FAQSection = () => {
   return (
     <section className="relative py-24 sm:py-32 overflow-hidden">
