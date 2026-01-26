@@ -197,6 +197,7 @@ const ConversionForm = () => {
                   <div className="space-y-4">
                     {painPoints.map((option) => (
                       <button
+                        type="button"
                         key={option.value}
                         onClick={() => handlePainPointSelect(option.value)}
                         className="w-full text-left p-5 bg-secondary/50 border border-border/50 rounded-lg hover:border-primary/50 hover:bg-secondary transition-all duration-300 group"
