@@ -1,7 +1,7 @@
 import HeroSection from "@/components/landing/HeroSection";
 import PillarsSection from "@/components/landing/PillarsSection";
 import ProofSection from "@/components/landing/ProofSection";
-import TestimonialsSection from "@/components/landing/TestimonialsSection";
+// import TestimonialsSection from "@/components/landing/TestimonialsSection"; // TODO: Uncomment when real testimonials are available
 import ConversionForm from "@/components/landing/ConversionForm";
 import FAQSection from "@/components/landing/FAQSection";
 import FinalCTASection from "@/components/landing/FinalCTASection";
@@ -13,7 +13,7 @@ const Index = () => {
       <HeroSection />
       <PillarsSection />
       <ProofSection />
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */} {/* TODO: Uncomment when real testimonials are available */}
       <ConversionForm />
       <FAQSection />
       <FinalCTASection />
