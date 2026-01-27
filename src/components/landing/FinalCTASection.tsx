@@ -11,6 +11,26 @@ const FinalCTASection = () => {
     }
   };
 
+  const openWaitlistPopup = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const formId = "59e1609c-faee-11f0-a879-6db35601943e";
+    
+    // Check if script is already loaded
+    if (!document.querySelector(`script[data-form="${formId}"]`)) {
+      const script = document.createElement('script');
+      script.src = `https://eomail5.com/form/${formId}.js`;
+      script.setAttribute('data-form', formId);
+      script.async = true;
+      document.body.appendChild(script);
+    } else {
+      // Script already loaded, trigger the form manually if possible
+      const formLink = document.querySelector(`[data-form="${formId}"]`);
+      if (formLink) {
+        formLink.dispatchEvent(new Event('click', { bubbles: true }));
+      }
+    }
+  };
+
   return (
     <section className="relative py-24 sm:py-32 overflow-hidden">
       {/* Texture layers */}
@@ -88,6 +108,7 @@ const FinalCTASection = () => {
             </p>
             <a 
               href="#" 
+              onClick={openWaitlistPopup}
               data-form="59e1609c-faee-11f0-a879-6db35601943e"
               className="text-primary hover:text-primary/80 font-semibold underline underline-offset-4 transition-colors cursor-pointer"
             >
