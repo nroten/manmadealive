@@ -16,6 +16,9 @@ const HeroSection = () => {
         {/* 3D Hills Background */}
         <GLSLHills className="pointer-events-none" />
 
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-background/60 z-[5]" />
+
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8">
           {/* Logo */}
