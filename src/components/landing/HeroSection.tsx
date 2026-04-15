@@ -114,15 +114,16 @@ const HeroSection = () => {
         </div>
         
         <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.p
+          {/* Section Headline */}
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-base sm:text-lg text-muted-foreground font-sans leading-relaxed mb-8"
+            className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold tracking-tight text-foreground mb-10"
           >
-            Most men don't wake up one day and decide to drift. Drift happens quietly—over years. Responsibilities increase. Pressure mounts. And somewhere along the way, clarity fades.
-          </motion.p>
+            You didn't wake up one day and decide to <span className="text-gradient-ember">drift.</span>
+          </motion.h2>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -131,7 +132,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="text-base sm:text-lg text-muted-foreground font-sans leading-relaxed mb-8"
           >
-            That's the rub many men feel but rarely articulate: responsibility without clarity, strength without direction, and faith without formation.
+            It happened gradually. Responsibilities increased. Expectations multiplied. And somewhere underneath all of it, clarity quietly faded — not through failure or faithlessness, but through the steady accumulation of a life that kept moving faster than your ability to carry it wisely.
           </motion.p>
 
           <motion.p
@@ -139,9 +140,9 @@ const HeroSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-lg sm:text-xl text-foreground font-serif font-medium mb-8"
+            className="text-base sm:text-lg text-muted-foreground font-sans leading-relaxed mb-8"
           >
-            You weren't made to figure this out alone.
+            The result is a feeling most men recognize but rarely name: responsibility without direction. Strength without a clear place to aim it. Faith that's sincere but hasn't fully shaped how you lead, love, or live.
           </motion.p>
 
           <motion.p
@@ -149,39 +150,53 @@ const HeroSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-base sm:text-lg text-muted-foreground font-sans leading-relaxed mb-6"
+            className="text-lg sm:text-xl text-foreground font-serif font-medium mb-8"
           >
-            A biblical formation pathway for Christian men who want discipline with purpose, clarity with direction, and a band of brothers walking the same road.
+            That ache between who you sense you're supposed to be and how you're actually living — it has a name.
           </motion.p>
 
           <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-sm text-muted-foreground font-sans tracking-wide mb-10"
+            className="text-lg sm:text-xl text-foreground font-serif font-semibold mb-10"
           >
-            Clarity. Discipline. Brotherhood. Rooted in Christ. Built to last.
+            It's called <span className="text-gradient-ember">drift</span>. And it's not a character flaw.
           </motion.p>
 
-          <motion.div
+          {/* Pull Quote */}
+          <motion.blockquote
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="flex flex-col items-center gap-4"
+            className="border-l-4 border-primary pl-6 py-4 mb-10 text-left"
           >
-            <Button 
-              size="lg" 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-base sm:text-lg rounded-md"
-              onClick={handleCTAClick}
-            >
-              Watch the Free Series →
-            </Button>
-            <p className="text-sm text-muted-foreground font-sans max-w-md">
-              Three videos. No fluff. No hype. Just clarity about who you're becoming and why it matters.
+            <p className="text-lg sm:text-xl font-serif italic text-foreground leading-relaxed">
+              "Drift is what happens when a man accumulates responsibility faster than he develops the clarity to carry it wisely."
             </p>
-          </motion.div>
+          </motion.blockquote>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="text-base sm:text-lg text-muted-foreground font-sans leading-relaxed mb-6"
+          >
+            Most men in this place aren't lazy. They aren't faithless. They are simply <span className="text-foreground font-medium">unformed</span> — and that is a very different problem, with a very different solution.
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+            className="text-lg sm:text-xl text-foreground font-serif font-semibold"
+          >
+            <span className="text-gradient-ember">Man Made Alive</span> exists for that problem.
+          </motion.p>
         </div>
       </section>
     </>
