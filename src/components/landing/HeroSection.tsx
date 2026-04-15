@@ -5,6 +5,10 @@ import { Button } from "@/components/ui/button";
 import { TopographyPattern, IronTexture } from "./BackgroundTextures";
 
 const HeroSection = () => {
+  const handleCTAClick = () => {
+    document.getElementById('conversion-form')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <>
       {/* Hero with 3D Hills Background */}
@@ -19,7 +23,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
-            className="mb-12"
+            className="mb-8"
           >
             <img 
               src={mmaLogo} 
@@ -28,28 +32,65 @@ const HeroSection = () => {
             />
           </motion.div>
 
+          {/* Eyebrow */}
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-sm sm:text-base tracking-[0.2em] uppercase text-muted-foreground font-sans font-medium mb-6"
+          >
+            A free 3-part video series for Christian men
+          </motion.p>
+
           {/* Main Headline */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold tracking-tight mb-6"
+            className="font-serif font-bold tracking-tight mb-2"
           >
-            Become a Man{" "}
-            <span className="text-gradient-ember">Made</span>{" "}
-            <span className="text-gradient-ember">Fully Alive</span>{" "}
-            in Christ
+            <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
+              Something <span className="text-gradient-ember">feels off.</span>
+            </span>
           </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.35 }}
+            className="text-xl sm:text-2xl md:text-3xl font-serif font-medium text-muted-foreground mb-8"
+          >
+            This is <span className="text-gradient-ember">why</span> — and what to do about it.
+          </motion.p>
 
           {/* Subheadline */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg sm:text-xl md:text-2xl text-muted-foreground font-sans font-light max-w-3xl mx-auto leading-relaxed"
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="text-base sm:text-lg text-muted-foreground font-sans font-light max-w-2xl mx-auto leading-relaxed mb-10"
           >
-            <span className="text-foreground font-medium">Stop drifting. Start becoming.</span>
+            Most men carrying real responsibility feel a quiet, persistent sense that something isn't right. Not broken — just off. The weight is real, the effort is genuine, but direction feels unclear and formation feels missing. This free series names what you're feeling, shows you what's been shaping you without your knowledge, and points you toward the only pattern that actually works.
           </motion.p>
+
+          {/* CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.65 }}
+            className="flex flex-col items-center gap-4"
+          >
+            <Button 
+              size="lg" 
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-base sm:text-lg rounded-md"
+              onClick={handleCTAClick}
+            >
+              Watch the Free Series →
+            </Button>
+            <p className="text-sm text-muted-foreground font-sans max-w-md">
+              Three videos. No fluff. No hype. Just clarity about who you're becoming and why it matters.
+            </p>
+          </motion.div>
         </div>
       </section>
 
@@ -57,24 +98,15 @@ const HeroSection = () => {
       <section className="relative bg-background py-20 sm:py-28 lg:py-32 overflow-hidden">
         {/* Layered Masculine Background Textures */}
         <div className="absolute inset-0 pointer-events-none">
-          {/* Subtle gradient overlay from top */}
           <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
-          
-          {/* Topography pattern for rugged terrain feel */}
           <TopographyPattern className="text-primary opacity-60" />
-          
-          {/* Iron texture for industrial strength */}
           <IronTexture className="text-muted-foreground opacity-40" />
-          
-          {/* Warm ember glow accent at center */}
           <div 
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] rounded-full opacity-[0.08]"
             style={{
               background: 'radial-gradient(ellipse at center, hsl(var(--primary)) 0%, transparent 70%)'
             }}
           />
-          
-          {/* Edge vignette for depth */}
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,hsl(var(--background))_100%)]" />
         </div>
         
@@ -139,14 +171,12 @@ const HeroSection = () => {
             <Button 
               size="lg" 
               className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-base sm:text-lg rounded-md"
-              onClick={() => {
-                document.getElementById('conversion-form')?.scrollIntoView({ behavior: 'smooth' });
-              }}
+              onClick={handleCTAClick}
             >
-              Start Your Free Formation Journey
+              Watch the Free Series →
             </Button>
             <p className="text-sm text-muted-foreground font-sans max-w-md">
-              A 30-day email series (8 emails) that moves you from drift to direction—and ends with a Personal Formation Charter you'll use for years.
+              Three videos. No fluff. No hype. Just clarity about who you're becoming and why it matters.
             </p>
           </motion.div>
         </div>
