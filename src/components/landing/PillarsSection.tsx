@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Compass, Flame, Heart, Users } from "lucide-react";
+import { CrosshairIcon, RotateCcw, Sprout, HandshakeIcon } from "lucide-react";
 import PillarCard from "./PillarCard";
 import { IronTexture, WoodGrainPattern } from "./BackgroundTextures";
 
@@ -10,7 +10,7 @@ const pillars = [
     problem: "You're carrying weight — leading at work, serving at home, showing up at church — but no one ever gave you a clear, biblical picture of what you're actually supposed to be aiming at. You have strength. You don't know where to direct it.",
     solution: "You'll receive a biblical vision of manhood anchored in Christ — not cultural trends, not vague spirituality, but clarity drawn from Scripture. You'll learn the four concrete arenas where biblical manhood is actually lived: Shield, Shepherd, Supply, and Sacrifice. You'll know exactly where to focus and what faithful presence looks like in each one.",
     outcome: "Confidence replaces confusion. Responsibility gains direction. You lead with purpose instead of pressure.",
-    icon: Compass,
+    icon: CrosshairIcon,
   },
   {
     pillarNumber: 2,
@@ -18,7 +18,7 @@ const pillars = [
     problem: "You've tried harder. Made commitments to pray more, lead better, be present. But willpower fades. Motivation fluctuates. Discipline collapses under the weight of real life — and the quiet creep of shame makes the next attempt feel less worth starting.",
     solution: "MMA teaches training, not trying. You'll learn how real spiritual formation happens — not through bursts of intensity, but through small, faithful rhythms that align your life with the new life you've already been given in Christ. And when you stumble, you'll learn how to return without restarting from scratch.",
     outcome: "Discipline becomes sustainable. Shame loses its grip. You return after inconsistency instead of quitting.",
-    icon: Flame,
+    icon: RotateCcw,
   },
   {
     pillarNumber: 3,
@@ -26,7 +26,7 @@ const pillars = [
     problem: "You believe the right things. You go to church. You pray. But your faith hasn't fully shaped how you live, lead, or love. Something more feels possible — but you're not sure how to get from knowing to becoming.",
     solution: "MMA offers a formation pathway where Scripture, prayer, and the work of the Holy Spirit shape your instincts over time — not through performance, but through a process of becoming. This is not about doing better. It's about being formed into the image of Christ so your strength serves others and your life glorifies God.",
     outcome: "Your faith becomes embodied. Strength serves instead of strains. You experience what it means to be a man fully alive in Christ — for the glory of God.",
-    icon: Heart,
+    icon: Sprout,
   },
   {
     pillarNumber: 4,
@@ -34,7 +34,7 @@ const pillars = [
     problem: "You've read the books, listened to the podcasts, made the commitments. But you're doing it alone. There's no one to process with. No brothers who understand what you're actually facing. And isolation doesn't just make growth harder — it makes it nearly impossible to sustain.",
     solution: "MMA connects you with other men on the same road. Not accountability for its own sake, but real brotherhood — men being formed in Christ together. A place to process honestly, return when you stumble, and celebrate small faithfulness over time. Men are not formed in isolation. They never have been.",
     outcome: "You stop fighting alone. Brotherhood replaces isolation. Growth becomes sustainable because you're walking it with men who understand.",
-    icon: Users,
+    icon: HandshakeIcon,
   },
 ];
 
