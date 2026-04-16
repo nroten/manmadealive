@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { BookOpen, Church, Heart, Scroll, Mountain, GraduationCap } from "lucide-react";
 import { KevlarPattern, TopographyPattern } from "./BackgroundTextures";
+import pastorNate from "@/assets/pastor-nate.png";
 
 const credibilityMarkers = [
   {
@@ -66,23 +67,33 @@ const ProofSection = () => {
 
         {/* Personal Narrative */}
         <div className="max-w-3xl mx-auto mb-16">
-          {/* Identity Card */}
+          {/* Identity Card with Photo */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
-            className="flex items-start gap-4 mb-10 pb-8 border-b border-border/40"
+            className="flex flex-col sm:flex-row items-center gap-6 mb-10 pb-8 border-b border-border/40"
           >
-            <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-              <Mountain className="w-7 h-7 text-primary" />
+            <div className="relative flex-shrink-0">
+              <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-primary/40 to-transparent blur-md" />
+              <img
+                src={pastorNate}
+                alt="Pastor Nate, planting pastor of Ashe Alliance Church in the mountains of North Carolina"
+                className="relative w-32 h-32 sm:w-36 sm:h-36 rounded-full object-cover border-2 border-primary/30 shadow-lg"
+                loading="lazy"
+              />
             </div>
-            <div>
-              <h3 className="font-serif text-2xl font-bold text-foreground">
+            <div className="text-center sm:text-left">
+              <p className="font-sans text-xs uppercase tracking-widest text-primary mb-1">
+                Meet
+              </p>
+              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-foreground">
                 Pastor Nate
               </h3>
-              <p className="font-sans text-sm text-muted-foreground">
-                Planting Pastor • Ashe Alliance Church • Mountains of North Carolina
+              <p className="font-sans text-sm text-muted-foreground flex items-center justify-center sm:justify-start gap-2 mt-2">
+                <Mountain className="w-4 h-4 flex-shrink-0" />
+                Planting Pastor • Ashe Alliance Church, NC
               </p>
             </div>
           </motion.div>
