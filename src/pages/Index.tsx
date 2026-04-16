@@ -2,6 +2,7 @@ import HeroSection from "@/components/landing/HeroSection";
 import VideoSeriesSection from "@/components/landing/VideoSeriesSection";
 import PillarsSection from "@/components/landing/PillarsSection";
 import ProofSection from "@/components/landing/ProofSection";
+import SecondCTASection from "@/components/landing/SecondCTASection";
 // import TestimonialsSection from "@/components/landing/TestimonialsSection"; // TODO: Uncomment when real testimonials are available
 import ConversionForm from "@/components/landing/ConversionForm";
 import FAQSection from "@/components/landing/FAQSection";
@@ -15,6 +16,7 @@ const Index = () => {
       <VideoSeriesSection />
       <PillarsSection />
       <ProofSection />
+      <SecondCTASection />
       {/* <TestimonialsSection /> */} {/* TODO: Uncomment when real testimonials are available */}
       <ConversionForm />
       <FAQSection />
