@@ -10,55 +10,48 @@ import { TopographyPattern, IronTexture } from "./BackgroundTextures";
 const faqs = [
   {
     question: "What exactly is Man Made Alive?",
-    answer: "MMA is a Christ-centered formation pathway for men. It's not a program you complete—it's a framework that helps you grow in biblical manhood through clarity, discipline, and brotherhood. Think of it as training for the life you've already been given in Christ.",
+    answer:
+      "MMA is a Christ-centered formation pathway for men — a structured, five-module progression built to form men into biblical manhood over time. Not motivate them for a week. Form them — slowly, biblically, alongside brothers.",
   },
   {
-    question: "What will I receive in the free 30-day email series?",
-    answer: "Over 30 days, you'll receive 8 carefully crafted emails that move you from drift to direction. You'll learn why willpower fails, how real training works, and discover the four concrete arenas where biblical manhood is actually lived (Shield, Shepherd, Supply, Sacrificial Leader). By the end, you'll have created a Personal Formation Charter—a personalized roadmap that consolidates your vision, rhythms, and next steps. It's yours to keep and use for years.",
+    question: "What will I receive when I sign up?",
+    answer:
+      "Immediate access to the free 3-part video series. Video 1 names the drift. Video 2 exposes the cultural stories shaping you. Video 3 introduces Jesus as the only true pattern and MMA as the formation pathway toward him. The final video also offers a free Personal Formation Charter — a one-page living document to keep you oriented as you begin.",
   },
   {
     question: "What is the Personal Formation Charter?",
-    answer: "The Personal Formation Charter is a practical, personalized tool you'll create during the email series. It helps you consolidate your vision for biblical manhood, identify which of the Four Arenas needs attention, establish sustainable rhythms, and define clear next steps. It's not a rigid plan—it's a living document that helps you stay aligned with who God is calling you to become. Many men return to it quarterly to recalibrate.",
+    answer:
+      "It's not a quiz result or a checklist. It's a one-page tool — yours to keep and return to — that holds two things together: where you actually are right now, and the direction you're choosing to aim your life. It grows with you across the full program.",
   },
   {
     question: "What are the Four Arenas?",
-    answer: "The Four Arenas are the concrete places where biblical manhood is lived: Shield (protecting what God entrusts), Shepherd (guiding and caring for others), Supply (providing faithfully and responsibly), and Sacrifice (laying down self to serve). These aren't abstract concepts—they're specific responsibilities where you'll learn to lead with clarity and strength.",
+    answer:
+      "Shield, Shepherd, Supply, and Sacrifice — four concrete areas of responsibility where a man's strength is meant to be spent. Not abstract concepts, but real, lived arenas: protecting what God has entrusted, guiding those under your influence, providing faithfully, and laying down comfort for the good of others.",
   },
   {
     question: "What's the difference between trying and training?",
-    answer: "Trying depends on willpower and motivation—which are finite and collapse under pressure. Training builds capacity through rhythms, practices, and obedience over time. Scripture doesn't tell us to try harder—it tells us to \"train yourself for godliness\" (1 Timothy 4:7). MMA teaches you how to train, not just try.",
+    answer:
+      "Trying is what most men default to: committing harder, pushing more, hoping the effort holds. Training is different. It builds actual capacity over time through rhythm, structure, and return — not intensity. The man who trains steadily will always outgrow the man who surges and burns out.",
   },
   {
-    question: "How do I know if I'm making progress?",
-    answer: "MMA measures progress through awareness, intentionality, and consistency—not perfection. You'll learn to do simple self-check-ins using the Four Arenas (Strong / Inconsistent / Neglected) without shame or comparison. Progress isn't about flawless performance—it's about faithful return.",
-  },
-  {
-    question: "Is this just another men's group?",
-    answer: "No. MMA is formation-focused, not event-focused. While brotherhood is central, the goal isn't accountability for its own sake—it's becoming a man fully alive in Christ through Scripture, the Holy Spirit, and faithful obedience over time. You'll be formed alongside other men, not managed by them.",
-  },
-  {
-    question: "How does the brotherhood aspect work?",
-    answer: "After the 30-day email series, you'll be invited to join a community of men walking the same formation pathway. It's not a weekly meeting you have to attend—it's an ongoing brotherhood where you process honestly, encourage faithfully, and grow consistently. Formation happens best in relationship, and MMA gives you the community you need to succeed.",
-  },
-  {
-    question: "How much time does this require?",
-    answer: "Formation happens in the margins. MMA is designed for men with real responsibilities. You're not adding another burden—you're learning how to align what you're already doing with who God is calling you to be. The email series requires just 5-10 minutes per email. The ongoing formation pathway is built around sustainable rhythms, not overwhelming commitments.",
-  },
-  {
-    question: "I've tried men's ministries before and burned out. How is this different?",
-    answer: "MMA rejects the hype-and-crash cycle. We don't promise intensity or quick transformation. We teach sustainable, biblical rhythms—small faithfulness over time. When you stumble, you return. That's formation, not performance. The focus is on consistency over intensity and faithfulness over perfection.",
+    question: "I've burned out on men's ministries before. How is this different?",
+    answer:
+      "Most men's programs deliver information. MMA is built for formation — a slower, more structured process that works from the inside out. It moves in a specific order for a reason. It doesn't rush. And it expects you to stumble — and teaches you to return without shame, not restart from scratch.",
   },
   {
     question: "Do I need to be part of a church to join?",
-    answer: "Yes. MMA assumes you're part of a local church body. Formation happens in relationship, and the local church is God's primary design for that. If you're looking for a church home, we're happy to help you find one.",
+    answer:
+      "MMA is designed to support and strengthen men in their local church — not replace it. If you're not currently connected to a church, that's worth addressing alongside your formation here. We'll talk about that honestly inside the program.",
   },
   {
-    question: "What happens after the 30 days?",
-    answer: "At the end of the 30-day email series, you'll have clarity, language, a Personal Formation Charter, and a clear pathway forward. You can continue on your own or choose to walk it alongside other men in the MMA brotherhood. There's no pressure—just an invitation to keep training faithfully.",
+    question: "How much time does this require?",
+    answer:
+      "The three free videos are 8–12 minutes each. The full formation pathway inside the Skool community is designed for men with real responsibilities — steady and sustainable, not all-consuming. Formation happens at the pace of faithfulness, not intensity.",
   },
   {
-    question: "Can I skip the email series and join the community directly?",
-    answer: "While we recommend starting with the 30-day email series to get clarity on MMA's framework, if you're ready for ongoing brotherhood now, you can join the Founding Members Waitlist. You'll be invited first when doors open and receive a founding-member rate.",
+    question: "What happens after the three videos?",
+    answer:
+      "At the end of Video 3, you'll receive an invitation to join the Man Made Alive Skool community — a structured formation environment with the full five-module curriculum, a community of men walking the same road, and the brotherhood that makes formation stick.",
   },
 ];
 const FAQSection = () => {
@@ -78,11 +71,17 @@ const FAQSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 max-w-3xl mx-auto"
         >
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold">
-            Frequently Asked <span className="text-gradient-ember">Questions</span>
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight">
+            You've probably <span className="text-gradient-ember">been here before.</span>
           </h2>
+          <p className="font-sans text-base sm:text-lg text-muted-foreground leading-relaxed">
+            Maybe you've done a men's program that moved you for three weeks and faded. Maybe you've attended the retreat, done the accountability group, read the books. Maybe the fact that you're still reading this means some part of you is still hungry — and another part is a little skeptical, because you've been here before and it didn't hold.
+          </p>
+          <p className="font-sans text-base sm:text-lg text-foreground/90 leading-relaxed mt-4">
+            That skepticism is honest. And it deserves an honest answer.
+          </p>
         </motion.div>
 
         {/* FAQ Accordion */}
