@@ -57,51 +57,55 @@ const FinalCTASection = () => {
           className="max-w-3xl mx-auto text-center"
         >
           {/* Header */}
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mb-10">
-            Ready to <span className="text-gradient-ember">begin?</span>
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mb-8 leading-tight">
+            This pathway <span className="text-gradient-ember">isn't for everyone.</span>
           </h2>
-          
+
+          {/* Description */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            viewport={{ once: true }}
+            className="space-y-5 mb-10"
+          >
+            <p className="font-sans text-base sm:text-lg text-muted-foreground leading-relaxed">
+              It's for the man who is ready to stop reacting and start aiming. Who wants discipline with purpose, clarity with direction, and brothers walking the same road. Who is willing to move slowly, engage honestly, and stay in the process long enough for something real to happen.
+            </p>
+            <p className="font-sans text-base sm:text-lg text-foreground/90 leading-relaxed">
+              If that's you — even partially, even imperfectly — the door is open.
+            </p>
+          </motion.div>
+
           {/* CTA Button */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.25 }}
             viewport={{ once: true }}
-            className="mb-10"
+            className="mb-5"
           >
             <Button 
               onClick={scrollToForm}
               size="lg"
               className="group bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              Start the Free 30-Day Formation Series
+              Watch the Free Series
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
           </motion.div>
-          
-          {/* Description */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ once: true }}
-            className="space-y-4"
-          >
-            <p className="text-muted-foreground leading-relaxed text-lg">
-              8 emails over 30 days that help you name the drift, replace trying with training, and discover the four arenas where biblical manhood is actually lived.
-            </p>
-            <p className="text-foreground font-medium">
-              You'll walk away with a Personal Formation Charter—a personalized roadmap you'll use for years.
-            </p>
-          </motion.div>
-          
+
+          <p className="font-sans text-sm text-muted-foreground mb-12">
+            Three videos. Free. No hype. Just formation.
+          </p>
+
           {/* Founding Members Waitlist */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
-            className="mt-12 pt-8 border-t border-border/30"
+            className="pt-8 border-t border-border/30"
           >
             <p className="text-muted-foreground mb-3">
               Already know you want ongoing formation with brothers?
