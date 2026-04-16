@@ -1,4 +1,5 @@
 import HeroSection from "@/components/landing/HeroSection";
+import VideoSeriesSection from "@/components/landing/VideoSeriesSection";
 import PillarsSection from "@/components/landing/PillarsSection";
 import ProofSection from "@/components/landing/ProofSection";
 // import TestimonialsSection from "@/components/landing/TestimonialsSection"; // TODO: Uncomment when real testimonials are available
@@ -11,6 +12,7 @@ const Index = () => {
   return (
     <main className="min-h-screen bg-background overflow-x-hidden">
       <HeroSection />
+      <VideoSeriesSection />
       <PillarsSection />
       <ProofSection />
       {/* <TestimonialsSection /> */} {/* TODO: Uncomment when real testimonials are available */}
