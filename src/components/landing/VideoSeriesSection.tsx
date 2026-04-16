@@ -109,7 +109,7 @@ const VideoSeriesSection = () => {
         </motion.p>
 
         {/* Video Cards */}
-        <div className="space-y-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-16">
           {videos.map((video, i) => (
             <motion.div
               key={video.number}
@@ -117,29 +117,25 @@ const VideoSeriesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.15 }}
-              className="bg-card/60 border border-border/40 rounded-xl p-6 sm:p-8 backdrop-blur-sm"
+              className="bg-card/60 border border-border/40 rounded-xl p-6 backdrop-blur-sm flex flex-col"
             >
-              <div className="flex items-start gap-5">
-                {/* Play icon */}
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/15 flex items-center justify-center mt-1">
-                  <Play className="w-5 h-5 text-primary ml-0.5" />
-                </div>
-
-                <div className="flex-1 min-w-0">
-                  {/* Video label */}
-                  <p className="text-sm font-sans font-medium tracking-wider uppercase text-primary mb-1">
-                    Video {video.number} — {video.label}
-                  </p>
-                  {/* Title */}
-                  <h3 className="text-xl sm:text-2xl font-serif font-bold text-foreground mb-3">
-                    "{video.title}"
-                  </h3>
-                  {/* Description */}
-                  <p className="text-sm sm:text-base text-muted-foreground font-sans leading-relaxed">
-                    {video.description}
-                  </p>
-                </div>
+              {/* Play icon */}
+              <div className="w-11 h-11 rounded-full bg-primary/15 flex items-center justify-center mb-4">
+                <Play className="w-5 h-5 text-primary ml-0.5" />
               </div>
+
+              {/* Video label */}
+              <p className="text-xs font-sans font-medium tracking-wider uppercase text-primary mb-1">
+                Video {video.number} — {video.label}
+              </p>
+              {/* Title */}
+              <h3 className="text-lg sm:text-xl font-serif font-bold text-foreground mb-3">
+                "{video.title}"
+              </h3>
+              {/* Description */}
+              <p className="text-sm text-muted-foreground font-sans leading-relaxed">
+                {video.description}
+              </p>
             </motion.div>
           ))}
         </div>
