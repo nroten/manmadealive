@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { BookOpen, Church, Heart, Scroll, Mountain, GraduationCap } from "lucide-react";
 import { KevlarPattern, TopographyPattern } from "./BackgroundTextures";
+import pastorNate from "@/assets/pastor-nate.png";
 
 const credibilityMarkers = [
   {
