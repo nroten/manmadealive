@@ -7,33 +7,33 @@ const pillars = [
   {
     pillarNumber: 1,
     title: "Responsibility Without Clarity",
-    problem: "You're carrying weight—leading at work, serving at home, showing up at church—but no one ever taught you what biblical manhood actually looks like. You feel the pressure of responsibility without the clarity of direction. You have strength, but you don't know where to aim it.",
-    solution: "Man Made Alive gives you a biblical vision of manhood rooted in Christ—not cultural masculinity, not vague spirituality, but clarity drawn from Scripture and shaped by the Holy Spirit. You'll learn the four concrete arenas where biblical manhood is actually lived: Shield, Shepherd, Supply, and Sacrifice. You'll know exactly where to focus and how to lead faithfully.",
+    problem: "You're carrying weight — leading at work, serving at home, showing up at church — but no one ever gave you a clear, biblical picture of what you're actually supposed to be aiming at. You have strength. You don't know where to direct it.",
+    solution: "You'll receive a biblical vision of manhood anchored in Christ — not cultural trends, not vague spirituality, but clarity drawn from Scripture. You'll learn the four concrete arenas where biblical manhood is actually lived: Shield, Shepherd, Supply, and Sacrifice. You'll know exactly where to focus and what faithful presence looks like in each one.",
     outcome: "Confidence replaces confusion. Responsibility gains direction. You lead with purpose instead of pressure.",
     icon: Compass,
   },
   {
     pillarNumber: 2,
     title: "Discipline That Doesn't Last",
-    problem: "You've tried harder. You've made commitments—to pray more, lead better, be present. But willpower fades. Motivation fluctuates. Discipline collapses under the weight of real life, and shame quietly creeps in.",
-    solution: "MMA teaches training, not trying. You'll learn how real spiritual formation happens—not through bursts of intensity, but through small, faithful rhythms that align your life with the new life you've already been given in Christ. Discipline becomes a sustainable practice, not a burden. And when you stumble, you'll learn how to return, not restart.",
-    outcome: "Discipline becomes sustainable. Shame loses its grip. When you stumble, you return instead of quitting.",
+    problem: "You've tried harder. Made commitments to pray more, lead better, be present. But willpower fades. Motivation fluctuates. Discipline collapses under the weight of real life — and the quiet creep of shame makes the next attempt feel less worth starting.",
+    solution: "MMA teaches training, not trying. You'll learn how real spiritual formation happens — not through bursts of intensity, but through small, faithful rhythms that align your life with the new life you've already been given in Christ. And when you stumble, you'll learn how to return without restarting from scratch.",
+    outcome: "Discipline becomes sustainable. Shame loses its grip. You return after inconsistency instead of quitting.",
     icon: Flame,
   },
   {
     pillarNumber: 3,
     title: "Faith Without Formation",
-    problem: "You believe the right things. You go to church. You pray. But your faith hasn't fully shaped how you live, lead, or love. Leadership feels heavy. Spiritual growth feels lonely. You know something more is possible—but you're not sure how to get there.",
-    solution: "MMA offers a formation pathway where Scripture, prayer, and the work of the Holy Spirit shape your instincts over time—not in isolation, but alongside other men walking the same road. This isn't about performing better. It's about being formed into the image of Christ so your strength serves others and your life glorifies God.",
-    outcome: "Your faith becomes embodied. Strength serves instead of strains. You experience the joy of being a man fully alive in Christ—for the glory of God.",
+    problem: "You believe the right things. You go to church. You pray. But your faith hasn't fully shaped how you live, lead, or love. Something more feels possible — but you're not sure how to get from knowing to becoming.",
+    solution: "MMA offers a formation pathway where Scripture, prayer, and the work of the Holy Spirit shape your instincts over time — not through performance, but through a process of becoming. This is not about doing better. It's about being formed into the image of Christ so your strength serves others and your life glorifies God.",
+    outcome: "Your faith becomes embodied. Strength serves instead of strains. You experience what it means to be a man fully alive in Christ — for the glory of God.",
     icon: Heart,
   },
   {
     pillarNumber: 4,
     title: "Growing Alone",
-    problem: "You've tried to grow on your own. You've read the books, listened to the podcasts, made the commitments—but you're doing it alone. There's no one checking in. No one to process with. No brothers who actually understand what you're facing. Isolation makes everything harder.",
-    solution: "MMA connects you with other men on the same road. Not accountability for its own sake, but real brotherhood—men who are being formed in Christ together. You'll have a place to process honestly, return when you stumble, and celebrate small faithfulness. Formation doesn't happen in isolation. It happens in relationship.",
-    outcome: "You stop fighting alone. Brotherhood replaces isolation. Growth becomes sustainable because you're walking it out alongside men who get it.",
+    problem: "You've read the books, listened to the podcasts, made the commitments. But you're doing it alone. There's no one to process with. No brothers who understand what you're actually facing. And isolation doesn't just make growth harder — it makes it nearly impossible to sustain.",
+    solution: "MMA connects you with other men on the same road. Not accountability for its own sake, but real brotherhood — men being formed in Christ together. A place to process honestly, return when you stumble, and celebrate small faithfulness over time. Men are not formed in isolation. They never have been.",
+    outcome: "You stop fighting alone. Brotherhood replaces isolation. Growth becomes sustainable because you're walking it with men who understand.",
     icon: Users,
   },
 ];
@@ -63,11 +63,18 @@ const PillarsSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16 sm:mb-20"
         >
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-            The Four <span className="text-gradient-ember">Pillars</span> of Biblical Formation
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
+            Why good men stay stuck — and what actually{" "}
+            <span className="text-gradient-ember">changes them.</span>
           </h2>
-          <p className="font-sans text-lg text-muted-foreground max-w-3xl mx-auto">
-            The four biggest obstacles standing between you and the man God is calling you to become—and how MMA addresses each one.
+          <p className="font-sans text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto mb-4">
+            Most programs are built to deliver information. A vision, a framework, good teaching. And information, on its own, does not produce lasting change. It produces temporary motivation. Motivation has a short shelf life.
+          </p>
+          <p className="font-sans text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto mb-4">
+            What produces durable change is <span className="text-foreground font-medium">formation</span>. And formation is not the same thing as information. It works from the inside out. It doesn't just change what a man does — it changes who a man is. Slowly. In order. With the right structure. Over time.
+          </p>
+          <p className="font-sans text-base sm:text-lg text-foreground font-medium max-w-3xl mx-auto">
+            Man Made Alive is built for formation. Every module addresses one of the four biggest obstacles between a man and the life he was made for.
           </p>
         </motion.div>
 
