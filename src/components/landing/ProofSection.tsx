@@ -80,7 +80,7 @@ const ProofSection = () => {
               <img
                 src={pastorNate}
                 alt="Pastor Nate, planting pastor of Ashe Alliance Church in the mountains of North Carolina"
-                className="relative w-32 h-32 sm:w-36 sm:h-36 rounded-full object-cover border-2 border-primary/30 shadow-lg"
+                className="relative w-32 h-32 sm:w-36 sm:h-36 rounded-full object-cover object-[center_20%] border-2 border-primary/30 shadow-lg"
                 loading="lazy"
               />
             </div>
