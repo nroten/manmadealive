@@ -135,22 +135,28 @@
   .font-serif        { font-family: 'Cormorant Garamond', Georgia, serif; }
   .font-sans         { font-family: 'Inter', system-ui, sans-serif; }
 
-  /* ===== v2 italic-accent word (gold) — used inside Oswald headlines ===== */
+  /* ===== v2 italic-accent word (gold) — used inside Oswald headlines.
+     Bumped to weight 600 + 1.1em so Newsreader's lighter strokes/wider
+     letterforms hold their own next to Oswald's condensed bold. ===== */
   .accent-italic {
     font-family: 'Newsreader', Georgia, serif;
     font-style: italic;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 1.1em;
     color: hsl(var(--gold));
     letter-spacing: -0.01em;
     text-transform: none;
+    line-height: 0.95;
   }
   .accent-italic-green {
     font-family: 'Newsreader', Georgia, serif;
     font-style: italic;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 1.1em;
     color: hsl(var(--mma-green-light));
     letter-spacing: -0.01em;
     text-transform: none;
+    line-height: 0.95;
   }
 
   /* ===== Eyebrow tag (Oswald, uppercase, wide tracking) ===== */
