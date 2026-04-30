@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Eye, Dumbbell, Crosshair, Users, Mountain } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { TopographyPattern, IronTexture } from "./BackgroundTextures";
+import brotherhoodPath from "@/assets/brotherhood-path.jpg";
 
 const stages = [
   {
@@ -38,22 +38,24 @@ const stages = [
 
 const PathwaySection = () => {
   const scrollToForm = () => {
-    const formSection = document.getElementById("conversion-form");
-    if (formSection) {
-      formSection.scrollIntoView({ behavior: "smooth" });
-    }
+    document.getElementById("conversion-form")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <section className="relative py-24 sm:py-32 overflow-hidden">
-      {/* Texture layers */}
-      <TopographyPattern className="text-muted-foreground opacity-20" />
-      <IronTexture className="text-foreground opacity-15" />
+    <section className="relative py-24 sm:py-32 overflow-hidden bg-background">
+      {/* Atmospheric backdrop */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-card/20 to-background" />
+        <div
+          className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[900px] h-[700px] rounded-full opacity-[0.07]"
+          style={{
+            background:
+              "radial-gradient(ellipse at center, hsl(var(--mma-green)) 0%, transparent 70%)",
+          }}
+        />
+      </div>
 
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/20 to-background" />
-
-      <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -62,59 +64,120 @@ const PathwaySection = () => {
           viewport={{ once: true }}
           className="text-center mb-16 max-w-3xl mx-auto"
         >
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight">
-            The fog lifted. Now here's <span className="text-gradient-ember">the path.</span>
+          <span className="eyebrow eyebrow-green inline-flex items-center gap-3 mb-6">
+            <span className="w-7 h-px bg-mma-green" />
+            ◆ The formation pathway · 5 stages
+            <span className="w-7 h-px bg-mma-green" />
+          </span>
+
+          <h2 className="font-display font-bold uppercase tracking-tight leading-[1.02] text-foreground text-3xl sm:text-4xl md:text-5xl mb-8">
+            The fog lifted.<br />
+            Now here's <span className="accent-italic-green">the path.</span>
           </h2>
-          <p className="font-sans text-sm sm:text-base uppercase tracking-widest text-muted-foreground mb-8">
-            The Man Made Alive formation pathway — five stages, one direction.
+
+          <p className="font-sans text-base sm:text-lg text-muted-foreground leading-relaxed mb-3">
+            The three videos gave you{" "}
+            <em className="font-italic-accent text-gold-light">language</em> for what you've been carrying. The Personal Formation Charter gave you a{" "}
+            <em className="font-italic-accent text-gold-light">compass</em>.
           </p>
-          <p className="font-sans text-base sm:text-lg text-muted-foreground leading-relaxed">
-            The three videos gave you language for what you've been carrying. The Personal Formation Charter gave you a compass. What comes next is the pathway itself — a structured, five-stage formation journey designed to form men into the likeness of Christ, one honest step at a time.
+          <p className="font-sans text-base sm:text-lg text-foreground/90 leading-relaxed">
+            What comes next is{" "}
+            <em className="font-italic-accent text-mma-green-light">the pathway itself</em> — a structured, five-stage formation journey designed to form men into the likeness of Christ, one honest step at a time.
           </p>
         </motion.div>
 
-        {/* Stages */}
-        <div className="max-w-4xl mx-auto space-y-4 mb-16">
-          {stages.map((stage, idx) => {
-            const Icon = stage.icon;
-            return (
-              <motion.div
-                key={stage.name}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: idx * 0.08 }}
-                viewport={{ once: true, margin: "-50px" }}
-                className="group relative bg-card/60 border border-border/50 rounded-lg p-6 sm:p-8 hover:border-primary/40 transition-colors duration-300"
-              >
-                <div className="flex items-start gap-5 sm:gap-6">
-                  {/* Stage number + icon */}
-                  <div className="flex-shrink-0 flex flex-col items-center">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
-                      <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-primary" />
-                    </div>
-                    <span className="font-sans text-xs text-muted-foreground tracking-widest mt-2">
-                      0{idx + 1}
-                    </span>
-                  </div>
+        {/* Pathway banner — visual proof of the metaphor before the stages list.
+            Bookends the Hero (man alone in fog) with this (men together on the path). */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="relative rounded-2xl overflow-hidden mb-14 border border-mma-green/25"
+        >
+          <div
+            className="aspect-[21/9] sm:aspect-[21/8] bg-cover bg-center"
+            style={{ backgroundImage: `url(${brotherhoodPath})` }}
+          />
+          {/* Atmospheric overlays — soft darken edges, subtle green wash, bottom fade into card */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/10 to-transparent"
+          />
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,10,11,0.55),transparent_25%,transparent_75%,rgba(10,10,11,0.55))]"
+          />
+          {/* Caption */}
+          <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
+            <span className="font-mono-tech text-[10px] font-bold uppercase tracking-[0.22em] text-mma-green-light mb-2 inline-block">
+              ◆ The pathway
+            </span>
+            <p className="font-italic text-lg sm:text-xl md:text-2xl text-foreground/95 leading-snug max-w-xl">
+              Faithful and unhurried.{" "}
+              <span className="accent-italic-green">With brothers alongside you.</span>
+            </p>
+          </div>
+        </motion.div>
 
-                  {/* Content */}
-                  <div className="flex-1 pt-1">
-                    <div className="flex flex-col sm:flex-row sm:items-baseline sm:gap-4 mb-2">
-                      <h3 className="font-serif text-2xl sm:text-3xl font-bold text-foreground tracking-wide">
-                        {stage.name}
-                      </h3>
-                      <p className="font-serif text-lg sm:text-xl text-primary italic">
-                        {stage.headline}
+        {/* Stages — vertical timeline */}
+        <div className="relative">
+          {/* Vertical connector line — runs from first stage to last */}
+          <div
+            aria-hidden="true"
+            className="absolute left-[27px] sm:left-[35px] top-7 bottom-7 w-px bg-gradient-to-b from-mma-green/40 via-mma-green/20 to-mma-green/0"
+          />
+
+          <div className="space-y-5">
+            {stages.map((stage, idx) => {
+              const Icon = stage.icon;
+              const num = String(idx + 1).padStart(2, "0");
+              return (
+                <motion.div
+                  key={stage.name}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.55, delay: idx * 0.08 }}
+                  viewport={{ once: true, margin: "-40px" }}
+                  className="relative group"
+                >
+                  <div className="relative bg-card border border-mma-green/25 rounded-2xl pl-20 sm:pl-24 pr-7 sm:pr-9 py-7 sm:py-8 hover:border-mma-green/55 transition-colors duration-300 overflow-hidden">
+                    {/* Tinted radial glow */}
+                    <div
+                      aria-hidden="true"
+                      className="absolute -top-24 -right-24 w-56 h-56 rounded-full opacity-[0.10] blur-[60px] pointer-events-none"
+                      style={{ background: "hsl(var(--mma-green))" }}
+                    />
+
+                    {/* Number/icon tile — anchored to the timeline */}
+                    <div className="absolute top-7 sm:top-8 left-3 sm:left-4 flex flex-col items-center">
+                      <div className="relative w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-background border-2 border-mma-green/40 flex items-center justify-center group-hover:bg-mma-green/15 group-hover:border-mma-green/70 transition-all duration-300">
+                        <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-mma-green-light" strokeWidth={1.7} />
+                      </div>
+                      <span className="font-mono-tech text-[9px] sm:text-[10px] font-bold tracking-[0.18em] text-mma-green-light/70 mt-2">
+                        {num}
+                      </span>
+                    </div>
+
+                    {/* Content */}
+                    <div className="relative">
+                      <div className="flex flex-col sm:flex-row sm:items-baseline sm:gap-4 mb-2">
+                        <h3 className="font-display font-bold uppercase text-2xl sm:text-3xl tracking-[0.02em] text-foreground leading-none">
+                          {stage.name}
+                        </h3>
+                        <p className="accent-italic-green text-lg sm:text-xl mt-1 sm:mt-0">
+                          {stage.headline}
+                        </p>
+                      </div>
+                      <p className="font-sans text-base text-muted-foreground leading-relaxed">
+                        {stage.body}
                       </p>
                     </div>
-                    <p className="font-sans text-base text-muted-foreground leading-relaxed">
-                      {stage.body}
-                    </p>
                   </div>
-                </div>
-              </motion.div>
-            );
-          })}
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
 
         {/* Closing line + CTA */}
@@ -123,15 +186,23 @@ const PathwaySection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center max-w-2xl mx-auto"
+          className="text-center max-w-2xl mx-auto mt-16"
         >
-          <p className="font-serif text-xl sm:text-2xl text-foreground/90 italic leading-relaxed mb-8">
-            This is not a program to complete. It is a pathway to walk — slowly, in order, with brothers alongside you.
+          <p className="font-italic text-xl sm:text-2xl text-foreground/95 leading-snug mb-3">
+            This is not a program to complete.
           </p>
+          <p className="font-display font-bold uppercase text-2xl sm:text-3xl tracking-tight text-foreground mb-10">
+            It is a pathway to{" "}
+            <span className="accent-italic-green">walk.</span>
+          </p>
+          <p className="font-italic text-base sm:text-lg text-muted-foreground mb-10 max-w-xl mx-auto">
+            Slowly. In order. With brothers alongside you.
+          </p>
+
           <Button
             size="lg"
             onClick={scrollToForm}
-            className="text-base sm:text-lg py-6 px-8 h-auto font-sans font-semibold glow-ember hover:scale-[1.02] transition-transform duration-300"
+            className="bg-mma-green hover:bg-mma-green-light text-charcoal font-display font-bold uppercase tracking-wider px-10 py-7 text-base sm:text-lg rounded-md animate-pulse-green hover:scale-[1.02] transition-transform border border-mma-green-light"
           >
             Start with the Free Videos
             <ArrowRight className="ml-2 h-5 w-5" />
