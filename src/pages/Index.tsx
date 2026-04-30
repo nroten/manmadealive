@@ -2,6 +2,7 @@ import HeroSection from "@/components/landing/HeroSection";
 import VideoSeriesSection from "@/components/landing/VideoSeriesSection";
 import PillarsSection from "@/components/landing/PillarsSection";
 import ProofSection from "@/components/landing/ProofSection";
+import PathwaySection from "@/components/landing/PathwaySection";
 import SecondCTASection from "@/components/landing/SecondCTASection";
 // import TestimonialsSection from "@/components/landing/TestimonialsSection"; // TODO: Uncomment when real testimonials are available
 // import ConversionForm from "@/components/landing/ConversionForm"; // Removed - email capture now lives in VideoSeriesSection
@@ -16,6 +17,7 @@ const Index = () => {
       <VideoSeriesSection />
       <PillarsSection />
       <ProofSection />
+      <PathwaySection />
       <SecondCTASection />
       {/* <TestimonialsSection /> */} {/* TODO: Uncomment when real testimonials are available */}
       <FAQSection />
