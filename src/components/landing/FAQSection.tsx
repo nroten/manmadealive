@@ -5,7 +5,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { TopographyPattern, IronTexture } from "./BackgroundTextures";
 
 const faqs = [
   {
@@ -54,59 +53,86 @@ const faqs = [
       "At the end of Video 3, you'll receive an invitation to join the Man Made Alive Skool community — a structured formation environment with the full five-module curriculum, a community of men walking the same road, and the brotherhood that makes formation stick.",
   },
 ];
+
 const FAQSection = () => {
   return (
-    <section className="relative py-24 sm:py-32 overflow-hidden">
-      {/* Subtle texture layers */}
-      <TopographyPattern className="text-muted-foreground opacity-20" />
-      <IronTexture className="text-foreground opacity-15" />
-      
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/20 to-background" />
-      
-      <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
+    <section className="relative py-24 sm:py-32 overflow-hidden bg-background">
+      {/* Atmospheric backdrop */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-card/20 to-background" />
+        <div
+          className="absolute top-1/3 left-1/4 w-[700px] h-[500px] rounded-full opacity-[0.05]"
+          style={{
+            background:
+              "radial-gradient(ellipse at center, hsl(var(--gold)) 0%, transparent 70%)",
+          }}
+        />
+      </div>
+
+      <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-12 max-w-3xl mx-auto"
+          className="text-center mb-14"
         >
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight">
-            You've probably <span className="text-gradient-ember">been here before.</span>
+          <span className="eyebrow inline-flex items-center gap-3 mb-6">
+            <span className="w-7 h-px bg-gold" />
+            ◆ Honest answers
+            <span className="w-7 h-px bg-gold" />
+          </span>
+
+          <h2 className="font-display font-bold uppercase tracking-tight leading-[1.02] text-foreground text-3xl sm:text-4xl md:text-5xl mb-8">
+            You've probably<br />
+            <span className="accent-italic">been here before.</span>
           </h2>
-          <p className="font-sans text-base sm:text-lg text-muted-foreground leading-relaxed">
-            Maybe you've done a men's program that moved you for three weeks and faded. Maybe you've attended the retreat, done the accountability group, read the books. Maybe the fact that you're still reading this means some part of you is still hungry — and another part is a little skeptical, because you've been here before and it didn't hold.
+
+          <p className="font-sans text-base sm:text-lg text-muted-foreground leading-relaxed mb-4">
+            Maybe you've done a men's program that moved you for three weeks and faded. Maybe you've attended the retreat, done the accountability group, read the books. Maybe the fact that you're still reading this means some part of you is{" "}
+            <em className="font-italic-accent text-gold-light">still hungry</em> — and another part is a little skeptical, because you've been here before and{" "}
+            <em className="font-italic-accent text-foreground">it didn't hold</em>.
           </p>
-          <p className="font-sans text-base sm:text-lg text-foreground/90 leading-relaxed mt-4">
-            That skepticism is honest. And it deserves an honest answer.
+          <p className="font-italic text-lg sm:text-xl text-foreground/95">
+            That skepticism is honest. <span className="text-gold">And it deserves an honest answer.</span>
           </p>
         </motion.div>
 
-        {/* FAQ Accordion */}
+        {/* FAQ Accordion — Radix accordion structure preserved */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
           viewport={{ once: true }}
-          className="max-w-3xl mx-auto"
         >
-          <Accordion type="single" collapsible className="space-y-4">
-            {faqs.map((faq, idx) => (
-              <AccordionItem
-                key={idx}
-                value={`item-${idx}`}
-                className="bg-card/50 border border-border/50 rounded-lg px-6 data-[state=open]:border-primary/30 transition-colors duration-300"
-              >
-                <AccordionTrigger className="text-left font-serif text-lg sm:text-xl hover:no-underline hover:text-primary transition-colors py-6">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed pb-6">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
+          <Accordion type="single" collapsible className="space-y-3">
+            {faqs.map((faq, idx) => {
+              const num = String(idx + 1).padStart(2, "0");
+              return (
+                <AccordionItem
+                  key={idx}
+                  value={`item-${idx}`}
+                  className="bg-card border border-gold/20 rounded-xl px-6 sm:px-7 data-[state=open]:border-gold/50 data-[state=open]:bg-card/80 transition-colors duration-300"
+                >
+                  <AccordionTrigger
+                    className="text-left hover:no-underline py-6 group"
+                  >
+                    <span className="flex items-start gap-4 sm:gap-5 flex-1 min-w-0">
+                      <span className="font-mono-tech text-[10px] font-bold tracking-[0.18em] text-gold-light/70 pt-1.5 flex-shrink-0">
+                        Q.{num}
+                      </span>
+                      <span className="font-display font-bold uppercase text-base sm:text-lg tracking-[0.005em] text-foreground group-hover:text-gold-light group-data-[state=open]:text-gold-light transition-colors leading-snug">
+                        {faq.question}
+                      </span>
+                    </span>
+                  </AccordionTrigger>
+                  <AccordionContent className="font-sans text-base text-muted-foreground leading-relaxed pb-6 pl-12 sm:pl-14 pr-2">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              );
+            })}
           </Accordion>
         </motion.div>
       </div>
