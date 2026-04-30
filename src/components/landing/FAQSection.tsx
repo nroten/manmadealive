@@ -21,7 +21,7 @@ const faqs = [
   {
     question: "What is the Personal Formation Charter?",
     answer:
-      "It's not a quiz result or a checklist. It's a one-page tool — yours to keep and return to — that holds two things together: where you actually are right now, and the direction you're choosing to aim your life. It grows with you across the full program.",
+      "Think of it as the compass we've been describing across the three videos — made tangible. Not a quiz result. Not a checklist. A single tool that holds two things together: where you actually are right now, and the direction you're choosing to move toward. Four sections that grow with you. Something worth returning to every week, not just reading once. Yours free, regardless of what you decide next.",
   },
   {
     question: "What are the Four Arenas?",
