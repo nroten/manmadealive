@@ -73,7 +73,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="text-base sm:text-lg text-muted-foreground font-sans font-light max-w-2xl mx-auto leading-relaxed mb-10"
           >
-            Most men carrying real responsibility feel a quiet, persistent sense that something isn't right. Not broken — just off. The weight is real, the effort is genuine, but direction feels unclear and formation feels missing. This free series names what you're feeling, shows you what's been shaping you without your knowledge, and points you toward the only pattern that actually works.
+            Most men carrying real responsibility know the feeling: not broken, not in crisis, just off. There's a weight that sits just below the sternum that doesn't have a clean name. The effort is real. The faith is sincere. But direction feels unclear and something deeper feels missing. This free series names what you're carrying, shows you what's been shaping you without your permission, and points you toward the only pattern that actually works.
           </motion.p>
 
           {/* CTA */}
