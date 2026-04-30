@@ -28,7 +28,7 @@ const videos = [
     label: "Name the Path",
     title: "The Man You Were Made to Become",
     description:
-      "Culture has never produced the kind of man most men actually want to be. This video introduces the only pattern that works — not a cultural ideal, not a performance standard, but Jesus himself: the clearest and most complete picture of what strength, authority, and sacrifice look like when they are rightly ordered. It also introduces Man Made Alive as the formation pathway toward becoming that man — slowly, honestly, over time.",
+      "Culture has never produced the kind of man most men actually want to be. This video introduces the only pattern that works — not a cultural ideal, not a performance standard, but Jesus himself. It also introduces Man Made Alive as the formation pathway, and offers the Personal Formation Charter as a free tool to keep: your compass for the direction you're choosing to walk.",
   },
 ];
 
