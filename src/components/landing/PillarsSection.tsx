@@ -8,7 +8,7 @@ const pillars = [
     pillarNumber: 1,
     title: "Responsibility Without Clarity",
     problem: "You're carrying weight — leading at work, serving at home, showing up at church — but no one ever gave you a clear, biblical picture of what you're actually supposed to be aiming at. You have strength. You don't know where to direct it.",
-    solution: "You'll receive a biblical vision of manhood anchored in Christ — not cultural trends, not vague spirituality, but clarity drawn from Scripture. You'll learn the four concrete arenas where biblical manhood is actually lived: Shield, Shepherd, Supply, and Sacrifice. You'll know exactly where to focus and what faithful presence looks like in each one.",
+    solution: "You'll receive a biblical vision of manhood anchored in Christ — not cultural trends, not vague spirituality, but clarity drawn from Scripture. You'll gain a concrete framework for where a man's strength is actually meant to be directed — four specific arenas of responsibility where faith either takes shape in real life or quietly remains abstract. You'll know exactly where to focus and what faithful presence looks like in each one.",
     outcome: "Confidence replaces confusion. Responsibility gains direction. You lead with purpose instead of pressure.",
     icon: CrosshairIcon,
   },
