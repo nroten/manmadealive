@@ -1,171 +1,313 @@
+/* =====================================================================
+   Fonts — v2 Brand Guide
+   Oswald (display) · Newsreader italic (accent + pull quotes) ·
+   Inter (body/UI) · JetBrains Mono (numbers, eyebrows, structural)
+   Cormorant kept temporarily for backward-compat with un-refactored
+   components until each is migrated to the new system.
+   ===================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
-
-/* MMA Design System - Masculine, Rugged, Christ-Centered */
+/* MMA Design System — v2 · Christ-centered, rugged, formation-shaped */
 
 @layer base {
   :root {
-    /* Dark Charcoal/Navy Base */
-    --background: 220 20% 8%;
+    /* ===== Surfaces ===== */
+    --background: 220 20% 8%;          /* pitch */
     --foreground: 40 15% 90%;
-
     --card: 220 18% 12%;
     --card-foreground: 40 15% 90%;
-
     --popover: 220 18% 12%;
     --popover-foreground: 40 15% 90%;
 
-    /* Primary - Living Green */
-    --primary: 145 65% 42%;
+    /* ===== Brand greens — softened to v2 brand guide ===== */
+    /* Was: 145 65% 42% (#25A95C) — too saturated. Now: #5fa57f */
+    --primary: 146 28% 51%;
     --primary-foreground: 220 20% 8%;
 
-    /* Secondary - Muted Stone */
+    /* Was: 160 60% 40% — now MMA green-light #7ebd99 */
+    --accent: 141 31% 62%;
+    --accent-foreground: 220 20% 8%;
+
+    /* Was: 145 70% 38% — now MMA green-deep #4a8062 */
+    --ember: 143 27% 39%;
+
+    /* New canonical green tokens (named) */
+    --mma-green: 146 28% 51%;
+    --mma-green-light: 141 31% 62%;
+    --mma-green-deep: 143 27% 39%;
+
+    /* ===== Brand gold — warmed amber to v2 ===== */
+    /* Was: 42 70% 55% (#D4A832 — too yellow). Now: #d4a574 */
+    --gold: 33 50% 65%;
+    --gold-light: 33 60% 76%;
+    --gold-deep: 33 49% 49%;
+
+    /* ===== Brand slate — NEW · fog/drift cool blue ===== */
+    --slate: 202 21% 52%;              /* #6b8e9e */
+    --slate-light: 199 22% 67%;        /* #97b2bd */
+    --slate-deep: 202 22% 38%;         /* #4d6b78 */
+
+    /* ===== Neutrals ===== */
     --secondary: 220 15% 18%;
     --secondary-foreground: 40 15% 85%;
-
-    /* Muted - Deep Slate */
     --muted: 220 12% 15%;
     --muted-foreground: 220 10% 55%;
-
-    /* Accent - Bright Verdant */
-    --accent: 160 60% 40%;
-    --accent-foreground: 40 15% 95%;
-
     --destructive: 0 72% 51%;
     --destructive-foreground: 40 15% 95%;
-
     --border: 220 15% 20%;
     --input: 220 15% 20%;
-    --ring: 145 65% 42%;
-
+    --ring: 146 28% 51%;
     --radius: 0.375rem;
 
-    /* Custom Colors */
-    --ember: 145 70% 38%;
-    --gold: 42 70% 55%;
+    /* ===== Legacy custom colors (kept for backward-compat) ===== */
     --cosmic-blue: 210 80% 25%;
     --charcoal: 220 20% 8%;
     --stone: 35 10% 70%;
     --cream: 40 25% 92%;
 
+    /* ===== Sidebar (untouched) ===== */
     --sidebar-background: 220 20% 6%;
     --sidebar-foreground: 40 15% 85%;
-    --sidebar-primary: 145 65% 42%;
+    --sidebar-primary: 146 28% 51%;
     --sidebar-primary-foreground: 220 20% 8%;
     --sidebar-accent: 220 15% 15%;
     --sidebar-accent-foreground: 40 15% 85%;
     --sidebar-border: 220 15% 18%;
-    --sidebar-ring: 145 65% 42%;
+    --sidebar-ring: 146 28% 51%;
   }
 
   .dark {
     --background: 220 20% 8%;
     --foreground: 40 15% 90%;
-
     --card: 220 18% 12%;
     --card-foreground: 40 15% 90%;
-
     --popover: 220 18% 12%;
     --popover-foreground: 40 15% 90%;
-
-    --primary: 145 65% 42%;
+    --primary: 146 28% 51%;
     --primary-foreground: 220 20% 8%;
-
     --secondary: 220 15% 18%;
     --secondary-foreground: 40 15% 85%;
-
     --muted: 220 12% 15%;
     --muted-foreground: 220 10% 55%;
-
-    --accent: 160 60% 40%;
-    --accent-foreground: 40 15% 95%;
-
+    --accent: 141 31% 62%;
+    --accent-foreground: 220 20% 8%;
     --destructive: 0 72% 51%;
     --destructive-foreground: 40 15% 95%;
-
     --border: 220 15% 20%;
     --input: 220 15% 20%;
-    --ring: 145 65% 42%;
-
+    --ring: 146 28% 51%;
     --sidebar-background: 220 20% 6%;
     --sidebar-foreground: 40 15% 85%;
-    --sidebar-primary: 145 65% 42%;
+    --sidebar-primary: 146 28% 51%;
     --sidebar-primary-foreground: 220 20% 8%;
     --sidebar-accent: 220 15% 15%;
     --sidebar-accent-foreground: 40 15% 85%;
     --sidebar-border: 220 15% 18%;
-    --sidebar-ring: 145 65% 42%;
+    --sidebar-ring: 146 28% 51%;
   }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
+  * { @apply border-border; }
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
   }
 
+  /* Default H-tag font — kept as serif (Cormorant) for un-refactored
+     legacy components. New components should use `font-display`
+     (Oswald) explicitly. */
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif;
   }
 }
 
 @layer utilities {
-  .font-serif {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+  /* ===== Font families ===== */
+  .font-display      { font-family: 'Oswald', system-ui, sans-serif; }
+  .font-italic       { font-family: 'Newsreader', Georgia, serif; font-style: italic; }
+  .font-italic-accent { font-family: 'Newsreader', Georgia, serif; font-style: italic; font-weight: 500; }
+  .font-mono-tech    { font-family: 'JetBrains Mono', 'SFMono-Regular', monospace; }
+  .font-serif        { font-family: 'Cormorant Garamond', Georgia, serif; }
+  .font-sans         { font-family: 'Inter', system-ui, sans-serif; }
+
+  /* ===== v2 italic-accent word (gold) — used inside Oswald headlines.
+     Bumped to weight 600 + 1.1em so Newsreader's lighter strokes/wider
+     letterforms hold their own next to Oswald's condensed bold. ===== */
+  .accent-italic {
+    font-family: 'Newsreader', Georgia, serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.1em;
+    color: hsl(var(--gold));
+    letter-spacing: -0.01em;
+    text-transform: none;
+    line-height: 0.95;
   }
-  
-  .font-sans {
-    font-family: 'Inter', system-ui, sans-serif;
+  .accent-italic-green {
+    font-family: 'Newsreader', Georgia, serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.1em;
+    color: hsl(var(--mma-green-light));
+    letter-spacing: -0.01em;
+    text-transform: none;
+    line-height: 0.95;
   }
 
+  /* ===== Eyebrow tag (Oswald, uppercase, wide tracking) ===== */
+  .eyebrow {
+    font-family: 'Oswald', system-ui, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: hsl(var(--gold));
+  }
+  .eyebrow-green { color: hsl(var(--mma-green-light)); }
+
+  /* ===== Legacy text-gradient (kept; refined to softer palette) ===== */
   .text-gradient-ember {
     @apply bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent;
   }
+  .text-gradient-gold {
+    background: linear-gradient(90deg, hsl(var(--gold)) 0%, hsl(var(--gold-light)) 50%, hsl(var(--gold)) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
 
+  /* ===== Glows ===== */
   .glow-ember {
     box-shadow: 0 0 40px -10px hsl(var(--primary) / 0.4);
   }
+  .glow-gold {
+    box-shadow: 0 0 40px -10px hsl(var(--gold) / 0.4);
+  }
+  .glow-green {
+    box-shadow: 0 0 40px -10px hsl(var(--mma-green) / 0.4);
+  }
 
+  /* ===== Borders ===== */
   .border-gradient {
     border-image: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent))) 1;
   }
+  .border-gold     { border-color: hsl(var(--gold) / 0.4); }
+  .border-slate-fog { border-color: hsl(var(--slate) / 0.4); }
+
+  /* ===== Brand chip — used in hero chip rows ===== */
+  .brand-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid hsl(var(--border));
+    border-radius: 100px;
+    font-family: 'Oswald', system-ui, sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: hsl(var(--muted-foreground));
+  }
+  .brand-chip.gold {
+    border-color: hsl(var(--gold) / 0.4);
+    color: hsl(var(--gold-light));
+    background: hsl(var(--gold) / 0.06);
+  }
+  .brand-chip.green {
+    border-color: hsl(var(--mma-green) / 0.45);
+    color: hsl(var(--mma-green-light));
+    background: hsl(var(--mma-green) / 0.07);
+  }
 }
 
-/* Cosmic particle animation */
+/* =====================================================================
+   Animations — full keyframe library from V1/V2/V3 video pages
+   ===================================================================== */
+
+/* Cosmic / hero particles */
 @keyframes float-particle {
-  0%, 100% {
-    transform: translateY(0) translateX(0);
-    opacity: 0.3;
-  }
-  50% {
-    transform: translateY(-20px) translateX(10px);
-    opacity: 0.6;
-  }
+  0%, 100% { transform: translateY(0) translateX(0); opacity: 0.3; }
+  50% { transform: translateY(-20px) translateX(10px); opacity: 0.6; }
 }
+.animate-float-slow   { animation: float-particle 8s ease-in-out infinite; }
+.animate-float-slower { animation: float-particle 12s ease-in-out infinite; }
 
 @keyframes pulse-glow {
-  0%, 100% {
-    opacity: 0.2;
-  }
-  50% {
-    opacity: 0.4;
-  }
+  0%, 100% { opacity: 0.2; }
+  50%      { opacity: 0.4; }
 }
+.animate-pulse-glow { animation: pulse-glow 4s ease-in-out infinite; }
 
-.animate-float-slow {
-  animation: float-particle 8s ease-in-out infinite;
+/* Gold pulse (used on eyebrow tags in v2 hero) */
+@keyframes pulse-gold {
+  0%, 100% { box-shadow: 0 0 0 0 hsl(var(--gold) / 0.35); }
+  50%      { box-shadow: 0 0 0 14px hsl(var(--gold) / 0); }
 }
+.animate-pulse-gold { animation: pulse-gold 3s ease-in-out infinite; }
 
-.animate-float-slower {
-  animation: float-particle 12s ease-in-out infinite;
+/* Green pulse (used on CTAs, RAG-green cards) */
+@keyframes pulse-green {
+  0%, 100% { box-shadow: 0 0 0 0 hsl(var(--mma-green) / 0.40); }
+  50%      { box-shadow: 0 0 0 16px hsl(var(--mma-green) / 0); }
 }
+.animate-pulse-green { animation: pulse-green 2.6s ease-in-out infinite; }
 
-.animate-pulse-glow {
-  animation: pulse-glow 4s ease-in-out infinite;
+/* Slow drift (background elements) */
+@keyframes drift-slow {
+  0%, 100% { transform: translate(0, 0); }
+  33%      { transform: translate(6px, -3px); }
+  66%      { transform: translate(-3px, 4px); }
 }
+.animate-drift-slow { animation: drift-slow 8s ease-in-out infinite; }
+
+/* Float (decorative blur orbs) */
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+.animate-float-soft { animation: float-soft 6s ease-in-out infinite; }
+
+/* RAG dot pulses */
+@keyframes rag-pulse-green {
+  0%, 100% { box-shadow: 0 0 0 0 hsl(var(--mma-green) / 0.55); }
+  50%      { box-shadow: 0 0 0 12px hsl(var(--mma-green) / 0); }
+}
+@keyframes rag-pulse-amber {
+  0%, 100% { box-shadow: 0 0 0 0 hsl(var(--gold) / 0.55); }
+  50%      { box-shadow: 0 0 0 12px hsl(var(--gold) / 0); }
+}
+@keyframes rag-pulse-red {
+  0%, 100% { box-shadow: 0 0 0 0 hsl(var(--destructive) / 0.55); }
+  50%      { box-shadow: 0 0 0 12px hsl(var(--destructive) / 0); }
+}
+.animate-rag-green { animation: rag-pulse-green 2.2s ease-in-out infinite; }
+.animate-rag-amber { animation: rag-pulse-amber 2.2s ease-in-out infinite 0.3s; }
+.animate-rag-red   { animation: rag-pulse-red   2.2s ease-in-out infinite 0.6s; }
+
+/* Count-up reveal */
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-count-up { animation: count-up 0.8s ease-out 0.2s both; }
+
+/* Flicker (warning indicators) */
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.45; }
+}
+.animate-flicker { animation: flicker 1.2s ease-in-out infinite; }
+
+/* Stroke-dash flow (for SVG diagrams) */
+@keyframes flow-dash {
+  to { stroke-dashoffset: -200; }
+}
+.animate-flow-dash { animation: flow-dash 4s linear infinite; }

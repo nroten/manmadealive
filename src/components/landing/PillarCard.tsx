@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
-import { LucideIcon } from "lucide-react";
+import { LucideIcon, AlertTriangle, ArrowRight } from "lucide-react";
 
 interface PillarCardProps {
   pillarNumber: number;
   title: string;
+  titleAccent?: string; // optional italic-accented suffix on the title
   problem: string;
   solution: string;
   outcome: string;
@@ -11,77 +12,100 @@ interface PillarCardProps {
   delay?: number;
 }
 
-const PillarCard = ({ 
-  pillarNumber, 
-  title, 
-  problem, 
+const PillarCard = ({
+  pillarNumber,
+  title,
+  titleAccent,
+  problem,
   solution,
-  outcome, 
+  outcome,
   icon: Icon,
-  delay = 0 
+  delay = 0,
 }: PillarCardProps) => {
+  const num = String(pillarNumber).padStart(2, "0");
+
   return (
-    <motion.div
+    <motion.article
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, delay }}
       viewport={{ once: true, margin: "-50px" }}
-      className="group relative"
+      className="group relative bg-card border border-gold/25 rounded-2xl overflow-hidden hover:border-gold/50 transition-colors duration-500"
     >
-      <div className="relative bg-card border border-border/50 rounded-lg p-8 sm:p-10 h-full hover:border-primary/30 transition-all duration-500">
-        {/* Pillar number badge */}
-        <div className="absolute -top-4 left-8">
-          <span className="bg-secondary text-muted-foreground text-xs font-sans font-semibold tracking-widest uppercase px-4 py-2 rounded-sm">
-            Pillar {pillarNumber}
-          </span>
-        </div>
+      {/* Tinted radial glow */}
+      <div
+        aria-hidden="true"
+        className="absolute -top-32 -right-24 w-72 h-72 rounded-full opacity-15 blur-[80px] pointer-events-none"
+        style={{ background: "hsl(var(--gold))" }}
+      />
 
-        {/* Icon */}
-        <div className="mb-6 mt-4">
-          <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
-            <Icon className="w-7 h-7 text-primary" />
+      <div className="relative p-8 sm:p-10">
+        {/* HEADER row — pillar number + icon + title */}
+        <div className="flex items-start gap-5 mb-8">
+          {/* Number tile */}
+          <div className="flex-shrink-0 flex flex-col items-center">
+            <div className="w-14 h-14 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center group-hover:bg-gold/20 transition-colors">
+              <Icon className="w-7 h-7 text-gold-light" strokeWidth={1.6} />
+            </div>
+            <span className="font-mono-tech text-[10px] font-bold tracking-[0.16em] text-gold-light/70 mt-2">
+              PILLAR {num}
+            </span>
+          </div>
+
+          {/* Title */}
+          <div className="flex-1 pt-1">
+            <h3 className="font-display font-bold uppercase text-2xl sm:text-3xl tracking-tight leading-[1.05] text-foreground">
+              {title}
+              {titleAccent && (
+                <>
+                  {" "}
+                  <span className="accent-italic">{titleAccent}</span>
+                </>
+              )}
+            </h3>
           </div>
         </div>
 
-        {/* Title */}
-        <h3 className="font-serif text-2xl sm:text-3xl font-bold mb-6 text-foreground">
-          {title}
-        </h3>
-
-        {/* The Problem You're Facing */}
-        <div className="mb-8">
-          <h4 className="font-sans text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-3">
-            The Problem You're Facing
-          </h4>
+        {/* PROBLEM — slate diagnostic */}
+        <div className="border-l-2 border-slate/40 pl-5 mb-7">
+          <div className="flex items-center gap-2 mb-2">
+            <AlertTriangle className="w-3.5 h-3.5 text-slate-light" strokeWidth={2.2} />
+            <span className="font-mono-tech text-[10px] font-bold uppercase tracking-[0.22em] text-slate-light">
+              ▲ The diagnosis
+            </span>
+          </div>
           <p className="font-sans text-base leading-relaxed text-muted-foreground">
             {problem}
           </p>
         </div>
 
-        {/* How MMA Helps */}
-        <div className="mb-8">
-          <h4 className="font-sans text-sm font-semibold uppercase tracking-widest text-primary mb-3">
-            How MMA Helps
-          </h4>
-          <p className="font-sans text-base leading-relaxed text-foreground">
+        {/* SOLUTION — gold prescription */}
+        <div className="border-l-2 border-gold/50 pl-5 mb-7">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="text-gold text-sm leading-none">◆</span>
+            <span className="font-mono-tech text-[10px] font-bold uppercase tracking-[0.22em] text-gold">
+              How MMA helps
+            </span>
+          </div>
+          <p className="font-sans text-base leading-relaxed text-foreground/95">
             {solution}
           </p>
         </div>
 
-        {/* The Outcome */}
-        <div className="pt-6 border-t border-border/50">
-          <h4 className="font-sans text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-3">
-            The Outcome
-          </h4>
-          <p className="font-sans text-base leading-relaxed text-foreground italic">
+        {/* OUTCOME — green forward, italic */}
+        <div className="border-l-2 border-mma-green/60 pl-5">
+          <div className="flex items-center gap-2 mb-2">
+            <ArrowRight className="w-3.5 h-3.5 text-mma-green-light" strokeWidth={2.4} />
+            <span className="font-mono-tech text-[10px] font-bold uppercase tracking-[0.22em] text-mma-green-light">
+              The outcome
+            </span>
+          </div>
+          <p className="font-italic text-lg leading-relaxed text-foreground/95">
             {outcome}
           </p>
         </div>
-
-        {/* Hover glow effect */}
-        <div className="absolute inset-0 rounded-lg bg-gradient-to-b from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
       </div>
-    </motion.div>
+    </motion.article>
   );
 };
 
