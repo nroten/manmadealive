@@ -351,10 +351,10 @@ const ConversionForm = () => {
                   </div>
 
                   <h3 className="font-serif text-2xl sm:text-3xl font-bold mb-2 text-foreground">
-                    Almost there, {firstName}!
+                    You're in, {firstName}.
                   </h3>
                   <p className="font-sans text-lg text-muted-foreground mb-8">
-                    Here's what to expect:
+                    Here's what happens next:
                   </p>
 
                   {/* Expectations */}
@@ -362,25 +362,25 @@ const ConversionForm = () => {
                     <div className="flex items-start gap-3">
                       <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                       <p className="font-sans text-foreground">
-                        <strong>Your first email arrives within 24 hours</strong>
+                        <strong>Immediate access to all three videos</strong> — watch at your own pace
                       </p>
                     </div>
                     <div className="flex items-start gap-3">
                       <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                       <p className="font-sans text-foreground">
-                        <strong>8 emails over 30 days</strong> – not daily, but consistent
+                        <strong>A free Personal Formation Charter</strong> — your compass for the man you were made to become
                       </p>
                     </div>
                     <div className="flex items-start gap-3">
                       <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                       <p className="font-sans text-foreground">
-                        <strong>You'll create your Personal Formation Charter</strong> – a personalized roadmap you'll use for years
+                        <strong>An invitation into the Man Made Alive community</strong> — 7 days free, no obligation
                       </p>
                     </div>
                     <div className="flex items-start gap-3">
                       <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                       <p className="font-sans text-foreground">
-                        <strong>No spam. No sales pitches. Just formation.</strong>
+                        <strong>No spam. No pressure. Just formation.</strong>
                       </p>
                     </div>
                   </div>
@@ -388,7 +388,7 @@ const ConversionForm = () => {
                   {/* Pastoral instruction */}
                   <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 mb-8">
                     <p className="font-serif text-foreground italic leading-relaxed">
-                      "Give 5-10 minutes when an email arrives. Do the one action. Be honest, not impressive. If you miss a day, don't quit—just re-enter."
+                      "Watch one video. Sit with it. Then fill out the first two sections of the charter. You don't need to have it figured out. You just need to begin honestly."
                     </p>
                     <p className="font-sans text-sm text-muted-foreground mt-3">
                       — Pastor Nate
@@ -409,7 +409,7 @@ const ConversionForm = () => {
                       </>
                     ) : (
                       <>
-                        Start My 30-Day Formation Journey
+                        Watch the Series Now
                         <ArrowRight className="ml-2 h-5 w-5" />
                       </>
                     )}
@@ -417,7 +417,7 @@ const ConversionForm = () => {
 
                   {/* Post-click note */}
                   <p className="font-sans text-sm text-muted-foreground max-w-md mx-auto">
-                    By clicking the button above, you'll be redirected to your email to confirm your subscription. Check your inbox (and spam folder) for your first email from Pastor Nate.
+                    Check your inbox for your video access link and the Personal Formation Charter download. If nothing arrives within a few minutes, check your spam folder.
                   </p>
                 </motion.div>
               )}
