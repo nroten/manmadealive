@@ -150,7 +150,7 @@ const ProofSection = () => {
           className="max-w-4xl mx-auto"
         >
           <h3 className="font-sans text-sm uppercase tracking-widest text-muted-foreground text-center mb-8">
-            Credibility Markers
+            What Nate Brings to This Work
           </h3>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
