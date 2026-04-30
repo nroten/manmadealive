@@ -11,7 +11,7 @@ const faqs = [
   {
     question: "What exactly is Man Made Alive?",
     answer:
-      "MMA is a Christ-centered formation pathway for men — a structured, five-module progression built to form men into biblical manhood over time. Not motivate them for a week. Form them — slowly, biblically, alongside brothers.",
+      "MMA is a Christ-centered formation pathway for men — a structured, five-module progression built to form men into the likeness of Christ, for the glory of God. Not motivate them for a week. Form them — slowly, biblically, alongside brothers.",
   },
   {
     question: "What will I receive when I sign up?",
