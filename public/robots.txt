@@ -1,14 +1,34 @@
 User-agent: Googlebot
 Allow: /
+Disallow: /why-do-good-men-feel-so-off.html
+Disallow: /the-stories-you-never-chose.html
+Disallow: /the-man-you-were-made-to-become.html
+Disallow: /personal-formation-charter.html
 
 User-agent: Bingbot
 Allow: /
+Disallow: /why-do-good-men-feel-so-off.html
+Disallow: /the-stories-you-never-chose.html
+Disallow: /the-man-you-were-made-to-become.html
+Disallow: /personal-formation-charter.html
 
 User-agent: Twitterbot
 Allow: /
+Disallow: /why-do-good-men-feel-so-off.html
+Disallow: /the-stories-you-never-chose.html
+Disallow: /the-man-you-were-made-to-become.html
+Disallow: /personal-formation-charter.html
 
 User-agent: facebookexternalhit
 Allow: /
+Disallow: /why-do-good-men-feel-so-off.html
+Disallow: /the-stories-you-never-chose.html
+Disallow: /the-man-you-were-made-to-become.html
+Disallow: /personal-formation-charter.html
 
 User-agent: *
 Allow: /
+Disallow: /why-do-good-men-feel-so-off.html
+Disallow: /the-stories-you-never-chose.html
+Disallow: /the-man-you-were-made-to-become.html
+Disallow: /personal-formation-charter.html
