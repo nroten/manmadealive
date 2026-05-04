@@ -6,6 +6,7 @@ Disallow: /the-man-you-were-made-to-become.html
 Disallow: /personal-formation-charter.html
 Disallow: /mma-brand-guide-v2.html
 Disallow: /mma-pastor-companion.html
+Disallow: /mma-man-companion.html
 
 User-agent: Bingbot
 Allow: /
@@ -15,6 +16,7 @@ Disallow: /the-man-you-were-made-to-become.html
 Disallow: /personal-formation-charter.html
 Disallow: /mma-brand-guide-v2.html
 Disallow: /mma-pastor-companion.html
+Disallow: /mma-man-companion.html
 
 User-agent: Twitterbot
 Allow: /
@@ -24,6 +26,7 @@ Disallow: /the-man-you-were-made-to-become.html
 Disallow: /personal-formation-charter.html
 Disallow: /mma-brand-guide-v2.html
 Disallow: /mma-pastor-companion.html
+Disallow: /mma-man-companion.html
 
 User-agent: facebookexternalhit
 Allow: /
@@ -33,6 +36,7 @@ Disallow: /the-man-you-were-made-to-become.html
 Disallow: /personal-formation-charter.html
 Disallow: /mma-brand-guide-v2.html
 Disallow: /mma-pastor-companion.html
+Disallow: /mma-man-companion.html
 
 User-agent: *
 Allow: /
@@ -42,3 +46,4 @@ Disallow: /the-man-you-were-made-to-become.html
 Disallow: /personal-formation-charter.html
 Disallow: /mma-brand-guide-v2.html
 Disallow: /mma-pastor-companion.html
+Disallow: /mma-man-companion.html
