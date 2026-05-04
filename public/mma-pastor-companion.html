@@ -195,8 +195,10 @@
     margin: 16px 0 18px;
   }
 
-  /* speaker note */
+  /* speaker note — hidden during presentation use; remove the
+     `display: none` line below to re-enable for handoff/training. */
   .speaker {
+    display: none;
     background: var(--slate-tint);
     border-left: 3px solid var(--slate);
     padding: 12px 18px;
