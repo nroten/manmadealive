@@ -262,8 +262,9 @@
   .col-body em {
     font-family: 'Newsreader', serif;
     font-style: italic;
+    font-size: 1.05em;
     color: var(--gold-light);
-    font-weight: 500;
+    font-weight: 600;
   }
   .col-body strong { color: var(--text); font-weight: 600; }
   .col-body + .col-body { margin-top: 6px; }
@@ -459,8 +460,9 @@
   .cover-intent em {
     font-family: 'Newsreader', serif;
     font-style: italic;
+    font-size: 1.05em;
     color: var(--gold-light);
-    font-weight: 500;
+    font-weight: 600;
   }
   .cover-nate {
     border-top: 1px solid var(--border);
@@ -549,7 +551,7 @@
     border-left: 1px solid var(--border);
     position: relative;
   }
-  .cover-gloss em { color: var(--gold-light); font-weight: 500; font-style: italic; }
+  .cover-gloss em { color: var(--gold-light); font-weight: 600; font-style: italic; font-size: 1.05em; font-family: 'Newsreader', serif; }
 
   /* ============ PAGE 2 — STATS ============ */
   .stat-row {
@@ -727,8 +729,9 @@
   .conviction-body em {
     font-family: 'Newsreader', serif;
     font-style: italic;
+    font-size: 1.05em;
     color: var(--gold-light);
-    font-weight: 500;
+    font-weight: 600;
   }
 
   /* ============ PAGE 5 — 5-T PATHWAY (5-cell row) ============ */
@@ -901,8 +904,36 @@
   .trait-body em {
     font-family: 'Newsreader', serif;
     font-style: italic;
+    font-size: 1.05em;
     color: var(--gold-light);
-    font-weight: 500;
+    font-weight: 600;
+  }
+
+  /* ============ PAGE 7 — SKOOL INTRO ============ */
+  .skool-intro {
+    background: linear-gradient(135deg, var(--gold-tint), rgba(95,165,127,0.06));
+    border: 1px solid rgba(212,165,116,0.25);
+    border-left: 3px solid var(--gold);
+    border-radius: 10px;
+    padding: 14px 22px;
+    margin-bottom: 18px;
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(13px, 1.1vw, 16px);
+    color: var(--muted);
+    line-height: 1.55;
+  }
+  .skool-intro strong { color: var(--gold-light); font-weight: 700; }
+  .skool-intro .skool-eye {
+    display: inline-block;
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(10px, 0.9vw, 12px);
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-right: 12px;
+    padding-right: 14px;
+    border-right: 1px solid rgba(212,165,116,0.4);
   }
 
   /* ============ PAGE 7 — TIERS ============ */
@@ -941,6 +972,24 @@
   .tier.gold::before  { background: var(--gold); }
   .tier.slate::before { background: var(--slate); }
   .tier.green::before { background: var(--green); }
+  /* Giant translucent watermark number — fills the empty space */
+  .tier::after {
+    content: attr(data-num);
+    position: absolute;
+    top: -8px;
+    right: 14px;
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(90px, 9vw, 150px);
+    font-weight: 700;
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    pointer-events: none;
+    opacity: 0.08;
+    color: var(--text);
+  }
+  .tier.gold::after  { color: var(--gold); opacity: 0.12; }
+  .tier.slate::after { color: var(--slate-light); opacity: 0.13; }
+  .tier.green::after { color: var(--green); opacity: 0.13; }
   .tier-tag {
     font-family: 'JetBrains Mono', monospace;
     font-size: clamp(11px, 0.95vw, 13px);
@@ -993,6 +1042,15 @@
     position: relative;
   }
   .tier-body strong { color: var(--text); font-weight: 600; }
+  .tier-body em {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-size: 1.05em;
+    font-weight: 600;
+  }
+  .tier.gold  .tier-body em { color: var(--gold-light); }
+  .tier.slate .tier-body em { color: var(--slate-light); }
+  .tier.green .tier-body em { color: var(--green-light); }
 
   /* ============ PAGE 8 — CLOSE ============ */
   .next-step {
@@ -1029,8 +1087,9 @@
   .next-step-desc em {
     font-family: 'Newsreader', serif;
     font-style: italic;
+    font-size: 1.05em;
     color: var(--gold-light);
-    font-weight: 500;
+    font-weight: 600;
   }
   .contact-block {
     border-top: 1px solid var(--border);
@@ -1519,24 +1578,29 @@
     <div class="title-rule"></div>
     <p class="speaker">Present the tiers in order and let him land where he's ready. The first tier is a one-sentence yes. Don't pressure toward the third.</p>
 
+    <p class="skool-intro">
+      <span class="skool-eye">◆ Hosted on Skool</span>
+      The full formation pathway lives inside a private online community on <strong>Skool</strong> — where men work through the curriculum together, process honestly, and walk the path alongside brothers.
+    </p>
+
     <div class="tiers">
-      <div class="tier gold">
+      <div class="tier gold" data-num="01">
         <span class="tier-tag">Tier 01 · Lowest barrier</span>
         <h3 class="tier-title">Point your men <span class="ital">here.</span></h3>
         <p class="tier-ask">The ask: one sentence — in a sermon, an email, or a bulletin.</p>
-        <p class="tier-body">Share the free three-video series with your men — <strong>no cost, no obligation, no formal partnership required</strong>. Simply tell your men: "There is a free resource I want you to look at." That is the entire first step. Many pastors begin here and go deeper as they see the fruit.</p>
+        <p class="tier-body">Share the free three-video series with your men — <strong>no cost, no obligation, no formal partnership required</strong>. Simply tell your men: "There is a free resource I want you to look at." That is the entire first step. Men who continue receive an invitation into the Skool community to walk the full pathway. Many pastors begin here and go deeper as they see the fruit.</p>
       </div>
-      <div class="tier slate">
+      <div class="tier slate" data-num="02">
         <span class="tier-tag">Tier 02 · Active partner</span>
         <h3 class="tier-title">Champion it <span class="ital">to your men.</span></h3>
         <p class="tier-ask">The ask: a personal endorsement and ongoing promotion.</p>
-        <p class="tier-body">Personally recommend MMA to the men in your congregation — from the pulpit, in small groups, in pastoral conversations. Provide the free videos and charter as a <strong>church-wide resource</strong>. Receive regular updates on how your men are engaging the pathway.</p>
+        <p class="tier-body">Personally recommend MMA to the men in your congregation — from the pulpit, in small groups, in pastoral conversations. Provide the free videos and charter as a <strong>church-wide resource</strong>. Join the Skool community yourself so you can <em>see for yourself</em> what your men are walking through and pastor them inside the same conversation.</p>
       </div>
-      <div class="tier green">
+      <div class="tier green" data-num="03">
         <span class="tier-tag">Tier 03 · Church partnership</span>
         <h3 class="tier-title">Integrate MMA <span class="ital">into your church.</span></h3>
         <p class="tier-ask">The ask: a formal, ongoing partnership.</p>
-        <p class="tier-body">Integrate MMA into the discipleship infrastructure of your church — a <strong>structured formation pathway</strong> for men that complements your preaching and small-group ministry. Group pricing available. Nate available to speak, lead a workshop, or train small group leaders on the formation framework.</p>
+        <p class="tier-body">Integrate MMA into the discipleship infrastructure of your church — a <strong>structured formation pathway</strong> for men inside the Skool community that complements your preaching and small-group ministry. Group pricing available. Nate available to speak, lead a workshop, or train small group leaders on the formation framework.</p>
       </div>
     </div>
 
