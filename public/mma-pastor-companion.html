@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Man Made Alive · A Conversation for Pastors</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================================
+     PASTOR COMPANION — print-ready, 8 pages × US Letter LANDSCAPE (11×8.5in).
+     Dark theme matching v2 brand guide. Open → ⌘P → "Save as PDF" or print.
+     ============================================================================ */
+  :root {
+    --bg:        #0a0a0b;
+    --bg-2:      #131519;
+    --bg-3:      #181b21;
+    --bg-4:      #1f242c;
+    --bg-5:      #262b34;
+    --border:    #2a2f37;
+    --border-2:  #3a4047;
+    --text:      #f5f3ee;
+    --muted:     #a8a8a8;
+    --dim:       #6e6e6e;
+
+    /* Gold — alive / aspirational */
+    --gold:        #d4a574;
+    --gold-light:  #e8c39a;
+    --gold-deep:   #b8893f;
+    --gold-tint:   rgba(212,165,116,0.10);
+
+    /* Slate — fog / drift / cool intellect */
+    --slate:       #6b8e9e;
+    --slate-light: #97b2bd;
+    --slate-deep:  #4d6b78;
+    --slate-tint:  rgba(107,142,158,0.08);
+
+    /* Green — formation / forward / brotherhood */
+    --green:       #5fa57f;
+    --green-light: #7ebd99;
+    --green-deep:  #4a8062;
+    --green-tint:  rgba(95,165,127,0.10);
+
+    /* semantic */
+    --red:         #ef476f;
+    --amber:       #ffd166;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      color-adjust: exact; }
+  html, body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: var(--text);
+    background: #1a1a1c;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Screen-only print tip */
+  .print-tip {
+    text-align: center;
+    background: rgba(212,165,116,0.06);
+    color: var(--gold);
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(212,165,116,0.25);
+  }
+  .print-tip kbd {
+    background: rgba(212,165,116,0.15);
+    border: 1px solid rgba(212,165,116,0.35);
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--gold-light);
+    margin: 0 4px;
+  }
+
+  /* ===== PAGE LAYOUT (US Letter LANDSCAPE) ===== */
+  .page {
+    width: 11in;
+    height: 8.5in;
+    margin: 24px auto;
+    background: var(--bg);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 14px 50px rgba(0,0,0,0.6);
+    page-break-after: always;
+    display: flex;
+    flex-direction: column;
+    background-image:
+      radial-gradient(at 30% 15%, rgba(212,165,116,0.04) 0%, transparent 55%),
+      radial-gradient(at 75% 85%, rgba(95,165,127,0.03) 0%, transparent 55%);
+  }
+  .page:last-of-type { page-break-after: auto; }
+
+  /* ===== shared header / footer ===== */
+  .page-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 36px;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+  .head-left {
+    font-family: 'Oswald', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--gold);
+  }
+  .head-right {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--dim);
+    letter-spacing: 0.1em;
+  }
+  .page-foot {
+    padding: 10px 36px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.08em;
+    color: var(--dim);
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+  .page-foot .signoff {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-size: 11px;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--gold);
+  }
+
+  /* ===== content frame ===== */
+  .page-body {
+    flex: 1;
+    padding: 24px 40px 18px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* ===== shared section title block ===== */
+  .kicker {
+    font-family: 'Oswald', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .kicker::before { content: ''; width: 24px; height: 1.5px; background: var(--gold); }
+
+  h1.page-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.0;
+    text-transform: uppercase;
+    color: var(--text);
+    letter-spacing: -0.005em;
+    margin-bottom: 6px;
+  }
+  h1.page-title .ital {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-weight: 600;
+    text-transform: none;
+    color: var(--gold);
+    font-size: 1.1em;
+    line-height: 0.95;
+  }
+  .title-rule {
+    width: 100%;
+    height: 1.5px;
+    background: linear-gradient(to right, var(--gold), transparent);
+    margin: 14px 0 14px;
+  }
+
+  /* speaker note */
+  .speaker {
+    background: var(--slate-tint);
+    border-left: 2px solid var(--slate);
+    padding: 8px 14px;
+    margin-bottom: 14px;
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-size: 12px;
+    color: var(--slate-light);
+    line-height: 1.45;
+  }
+  .speaker::before {
+    content: '◆ SPEAKER NOTE · ';
+    font-family: 'Oswald', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 9.5px;
+    letter-spacing: 0.18em;
+    color: var(--slate);
+  }
+
+  /* two-column */
+  .cols { display: grid; gap: 28px; flex: 1; align-items: start; min-height: 0; }
+  .cols.c45-55 { grid-template-columns: 45fr 55fr; }
+  .cols.c50-50 { grid-template-columns: 1fr 1fr; }
+  .cols.c40-60 { grid-template-columns: 40fr 60fr; }
+
+  .col { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+  .col-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2px;
+  }
+  .col-label.green { color: var(--green-light); }
+  .col-label.slate { color: var(--slate-light); }
+  .col-heading {
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text);
+    line-height: 1.18;
+    letter-spacing: 0.005em;
+    margin-bottom: 4px;
+  }
+  .col-heading .ital {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-weight: 600;
+    text-transform: none;
+    color: var(--gold);
+    font-size: 1.08em;
+  }
+  .col-body {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--muted);
+  }
+  .col-body em {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    color: var(--gold-light);
+    font-weight: 500;
+  }
+  .col-body strong { color: var(--text); font-weight: 600; }
+  .col-body + .col-body { margin-top: 4px; }
+
+  /* pull quote */
+  .pull {
+    margin: 6px 0 0;
+    background: linear-gradient(135deg, var(--gold-tint), var(--green-tint));
+    border: 1px solid rgba(212,165,116,0.3);
+    border-left: 3px solid var(--gold);
+    border-radius: 6px;
+    padding: 12px 16px;
+    position: relative;
+  }
+  .pull p {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.45;
+    font-weight: 500;
+  }
+  .pull p .key { color: var(--gold); }
+  .pull cite {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 6px;
+    font-style: normal;
+  }
+
+  /* dark callout (gold-bordered) */
+  .callout {
+    background: var(--bg-2);
+    border: 1px solid var(--gold);
+    border-radius: 8px;
+    padding: 14px 22px;
+    text-align: center;
+  }
+  .callout p {
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.005em;
+    color: var(--text);
+    line-height: 1.3;
+  }
+  .callout p .ital {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-weight: 500;
+    text-transform: none;
+    color: var(--gold);
+    font-size: 1.1em;
+  }
+  .callout .sub {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-size: 12px;
+    color: var(--gold-light);
+    margin-top: 5px;
+    font-weight: 500;
+  }
+
+  /* ============ PAGE 1 — COVER ============ */
+  .cover {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 50fr 50fr;
+    gap: 0;
+    overflow: hidden;
+  }
+  .cover-left {
+    background: var(--bg);
+    padding: 40px 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 3px solid var(--gold);
+    position: relative;
+    overflow: hidden;
+  }
+  .cover-left::before {
+    content: '';
+    position: absolute;
+    top: -20%; left: -20%;
+    width: 80%; height: 80%;
+    background: radial-gradient(circle, rgba(212,165,116,0.10) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .cover-right {
+    background: var(--bg-2);
+    padding: 40px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover-right::before {
+    content: '';
+    position: absolute;
+    top: 50%; right: -20%;
+    width: 60%; height: 80%;
+    transform: translateY(-50%);
+    background: radial-gradient(circle, rgba(95,165,127,0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .cover-logo-area { display: flex; align-items: center; gap: 14px; margin-bottom: 32px; position: relative; }
+  .cover-logo-mark {
+    width: 56px; height: 56px;
+    border: 1.5px solid var(--gold);
+    border-radius: 6px;
+    background: var(--gold-tint);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.08em;
+    color: var(--gold-light);
+  }
+  .cover-logo-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text);
+  }
+  .cover-logo-sub {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  .cover-main-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 56px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 0.95;
+    letter-spacing: -0.005em;
+    color: var(--text);
+    margin-bottom: 10px;
+    position: relative;
+  }
+  .cover-main-title .ital {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-weight: 600;
+    text-transform: none;
+    color: var(--gold);
+    font-size: 1.05em;
+  }
+  .cover-subtitle {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--gold-light);
+    line-height: 1.4;
+    margin-bottom: 22px;
+    position: relative;
+  }
+  .cover-rule {
+    width: 60px;
+    height: 2px;
+    background: var(--gold);
+    margin-bottom: 18px;
+    position: relative;
+  }
+  .cover-intent {
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    color: var(--muted);
+    line-height: 1.55;
+    position: relative;
+    max-width: 90%;
+  }
+  .cover-intent em {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    color: var(--gold-light);
+    font-weight: 500;
+  }
+  .cover-nate {
+    border-top: 1px solid var(--border);
+    padding-top: 14px;
+    position: relative;
+  }
+  .cover-nate-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text);
+  }
+  .cover-nate-title {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 1px;
+  }
+  .cover-nate-link {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--gold-light);
+    letter-spacing: 0.04em;
+    margin-top: 6px;
+  }
+
+  .cover-quote-label {
+    position: relative;
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 18px;
+  }
+  .cover-quote-label .lbl {
+    font-family: 'Oswald', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .cover-quote-label .rule {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, var(--gold), transparent);
+  }
+  .cover-quote {
+    font-family: 'Oswald', sans-serif;
+    font-size: 56px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 0.98;
+    color: var(--text);
+    border-left: 4px solid var(--gold);
+    padding-left: 22px;
+    margin-bottom: 18px;
+    position: relative;
+  }
+  .cover-quote .ital {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-weight: 500;
+    text-transform: none;
+    color: var(--gold);
+    font-size: 1em;
+  }
+  .cover-attribution {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    padding-left: 25px;
+    margin-bottom: 22px;
+    position: relative;
+  }
+  .cover-gloss {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-size: 13.5px;
+    color: var(--muted);
+    line-height: 1.55;
+    padding-left: 25px;
+    border-left: 1px solid var(--border);
+    position: relative;
+  }
+  .cover-gloss em { color: var(--gold-light); font-weight: 500; font-style: italic; }
+
+  /* ============ PAGE 2 — STATS ============ */
+  .stat-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+    margin-bottom: 18px;
+    border: 1px solid var(--gold);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .stat-cell {
+    background: var(--bg-2);
+    padding: 18px 18px;
+    border-right: 1px solid rgba(212,165,116,0.25);
+    text-align: center;
+    position: relative;
+  }
+  .stat-cell:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Oswald', sans-serif;
+    font-size: 44px;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .stat-num small { font-size: 28px; color: var(--gold-light); }
+  .stat-label {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.4;
+    font-weight: 400;
+  }
+  .stat-source {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.06em;
+    color: var(--dim);
+    margin-top: 4px;
+  }
+
+  /* ============ PAGE 4 — HEAD/HEART/HANDS ============ */
+  .hhh {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    height: 100%;
+  }
+  .hhh-bar {
+    flex: 1;
+    padding: 14px 22px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .hhh-bar::after {
+    content: '▼';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--gold);
+    font-size: 11px;
+    z-index: 10;
+  }
+  .hhh-bar:last-child::after { display: none; }
+  .hhh-bar.head {
+    background: linear-gradient(135deg, var(--bg-2), rgba(107,142,158,0.18));
+    border: 1px solid rgba(107,142,158,0.4);
+  }
+  .hhh-bar.heart {
+    background: linear-gradient(135deg, var(--bg-2), rgba(212,165,116,0.18));
+    border: 1px solid rgba(212,165,116,0.4);
+  }
+  .hhh-bar.hands {
+    background: linear-gradient(135deg, var(--bg-2), rgba(95,165,127,0.18));
+    border: 1px solid rgba(95,165,127,0.4);
+  }
+  .hhh-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    margin-bottom: 4px;
+  }
+  .hhh-bar.head .hhh-num { color: var(--slate-light); }
+  .hhh-bar.heart .hhh-num { color: var(--gold-light); }
+  .hhh-bar.hands .hhh-num { color: var(--green-light); }
+  .hhh-word {
+    font-family: 'Oswald', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1;
+    color: var(--text);
+    letter-spacing: 0.005em;
+    margin-bottom: 4px;
+  }
+  .hhh-word .ital {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-weight: 600;
+    text-transform: none;
+    font-size: 1em;
+  }
+  .hhh-bar.head .hhh-word .ital { color: var(--slate-light); }
+  .hhh-bar.heart .hhh-word .ital { color: var(--gold-light); }
+  .hhh-bar.hands .hhh-word .ital { color: var(--green-light); }
+  .hhh-verse {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+  .hhh-module {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    color: var(--dim);
+    margin-top: 4px;
+    text-transform: uppercase;
+  }
+
+  /* ============ PAGE 5 — CONVICTIONS + PATHWAY ============ */
+  .conviction { margin-bottom: 8px; }
+  .conviction-head {
+    font-family: 'Oswald', sans-serif;
+    font-size: 12.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text);
+    margin-bottom: 2px;
+  }
+  .conviction-body {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--muted);
+    padding-left: 12px;
+    border-left: 2px solid var(--gold);
+  }
+  .conviction-body em {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    color: var(--gold-light);
+    font-weight: 500;
+  }
+
+  .pathway-stage {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 7px;
+    padding-bottom: 7px;
+    border-bottom: 1px dashed var(--border);
+  }
+  .pathway-stage:last-child { border-bottom: none; padding-bottom: 0; }
+  .stage-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: var(--green-light);
+    white-space: nowrap;
+    padding-top: 2px;
+    min-width: 90px;
+  }
+  .stage-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text);
+    line-height: 1.15;
+    letter-spacing: 0.005em;
+  }
+  .stage-title .ital {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-weight: 600;
+    text-transform: none;
+    color: var(--green-light);
+    font-size: 1.05em;
+  }
+  .stage-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 11.5px;
+    color: var(--muted);
+    line-height: 1.45;
+    margin-top: 1px;
+  }
+
+  /* ============ PAGE 6 — TRAITS ============ */
+  .trait { margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px dashed var(--border); }
+  .trait:last-child { border-bottom: none; padding-bottom: 0; }
+  .trait-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 3px;
+  }
+  .trait-body {
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+  .trait-body em {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    color: var(--gold-light);
+    font-weight: 500;
+  }
+
+  /* ============ PAGE 7 — TIERS ============ */
+  .tiers {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+    flex: 1;
+    align-content: stretch;
+  }
+  .tier {
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-top: 3px solid;
+    border-radius: 10px;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+  }
+  .tier.gold  { border-top-color: var(--gold); }
+  .tier.slate { border-top-color: var(--slate); }
+  .tier.green { border-top-color: var(--green); }
+  .tier::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    filter: blur(40px);
+    opacity: 0.15;
+    pointer-events: none;
+  }
+  .tier.gold::before  { background: var(--gold); }
+  .tier.slate::before { background: var(--slate); }
+  .tier.green::before { background: var(--green); }
+  .tier-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    position: relative;
+  }
+  .tier.gold  .tier-tag { color: var(--gold-light); }
+  .tier.slate .tier-tag { color: var(--slate-light); }
+  .tier.green .tier-tag { color: var(--green-light); }
+  .tier-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.1;
+    letter-spacing: 0.005em;
+    color: var(--text);
+    position: relative;
+  }
+  .tier-title .ital {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-weight: 600;
+    text-transform: none;
+    font-size: 1.05em;
+  }
+  .tier.gold  .tier-title .ital { color: var(--gold); }
+  .tier.slate .tier-title .ital { color: var(--slate-light); }
+  .tier.green .tier-title .ital { color: var(--green-light); }
+  .tier-ask {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-size: 11.5px;
+    padding-bottom: 7px;
+    border-bottom: 1px dashed var(--border);
+    line-height: 1.4;
+    font-weight: 500;
+    position: relative;
+  }
+  .tier.gold  .tier-ask { color: var(--gold); }
+  .tier.slate .tier-ask { color: var(--slate-light); }
+  .tier.green .tier-ask { color: var(--green-light); }
+  .tier-body {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--muted);
+    position: relative;
+  }
+  .tier-body strong { color: var(--text); font-weight: 600; }
+
+  /* ============ PAGE 8 — CLOSE ============ */
+  .next-step {
+    display: grid;
+    grid-template-columns: 38px 1fr;
+    gap: 12px;
+    align-items: start;
+    margin-bottom: 10px;
+  }
+  .next-step-num {
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+    text-align: center;
+  }
+  .next-step-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    color: var(--text);
+    margin-bottom: 2px;
+    line-height: 1.2;
+  }
+  .next-step-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.45;
+  }
+  .next-step-desc em {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    color: var(--gold-light);
+    font-weight: 500;
+  }
+  .contact-block {
+    border-top: 1px solid var(--border);
+    padding-top: 12px;
+    margin-top: 12px;
+  }
+  .contact-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.005em;
+    color: var(--text);
+  }
+  .contact-title {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .contact-detail {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--gold-light);
+    letter-spacing: 0.04em;
+    margin-bottom: 2px;
+  }
+
+  /* ============ PRINT MEDIA ============ */
+  @media print {
+    @page { size: letter landscape; margin: 0; }
+    html, body { background: var(--bg); }
+    .print-tip { display: none; }
+    .page {
+      margin: 0;
+      box-shadow: none;
+      page-break-after: always;
+    }
+    .page:last-of-type { page-break-after: auto; }
+  }
+  @media screen {
+    .workspace { padding: 0 16px 48px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="print-tip">
+  Print-ready · 8 pages · LANDSCAPE letter · Open in browser, then <kbd>⌘ P</kbd> / <kbd>Ctrl P</kbd> → <strong>Save as PDF</strong> for sharing with pastors.
+</div>
+
+<div class="workspace">
+
+<!-- ================================================================
+     PAGE 1 — COVER
+     ================================================================ -->
+<div class="page">
+  <div class="cover">
+    <div class="cover-left">
+      <div>
+        <div class="cover-logo-area">
+          <div class="cover-logo-mark">MMA</div>
+          <div>
+            <div class="cover-logo-name">Man Made Alive</div>
+            <div class="cover-logo-sub">A Formation Pathway for Men</div>
+          </div>
+        </div>
+        <div class="cover-main-title">A Conversation<br/>for <span class="ital">Pastors.</span></div>
+        <div class="cover-subtitle">Vision-casting the MMA formation pathway<br/>for the men in your congregation.</div>
+        <div class="cover-rule"></div>
+        <p class="cover-intent">
+          This document accompanies <em>a conversation</em> — not a sales pitch. Each page is designed to be walked through together, not read alone.
+        </p>
+      </div>
+      <div class="cover-nate">
+        <div class="cover-nate-name">Nate Roten</div>
+        <div class="cover-nate-title">Pastor · Founder, Man Made Alive</div>
+        <div class="cover-nate-link">manmadealive.com</div>
+      </div>
+    </div>
+    <div class="cover-right">
+      <div class="cover-quote-label">
+        <span class="lbl">◆ The Foundation</span>
+        <span class="rule"></span>
+      </div>
+      <div class="cover-quote">
+        "The glory<br/>of God is man<br/><span class="ital">fully alive."</span>
+      </div>
+      <div class="cover-attribution">— Irenaeus · 2nd Century</div>
+      <p class="cover-gloss">
+        Not self-expression. Not achievement. <em>A man restored to his God-given design</em> — alive to God, aligned with His will, faithful in the responsibilities entrusted to him. That is what Man Made Alive is building toward.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================================
+     PAGE 2 — THE PROBLEM (STATS)
+     ================================================================ -->
+<div class="page">
+  <div class="page-head">
+    <span class="head-left">◆ Man Made Alive · A Conversation for Pastors</span>
+    <span class="head-right">02 / 08</span>
+  </div>
+  <div class="page-body">
+    <span class="kicker">The problem he already knows</span>
+    <h1 class="page-title">Your men are feeling it.<br/><span class="ital">The data confirms it.</span></h1>
+    <div class="title-rule"></div>
+    <p class="speaker">Lead with the data. Most pastors will recognize their own congregation before you say a word about MMA.</p>
+
+    <div class="stat-row">
+      <div class="stat-cell">
+        <div class="stat-num">70<small>%</small></div>
+        <div class="stat-label">of men report feeling spiritually stagnant — active in church, but not growing</div>
+        <div class="stat-source">// Barna · 2024</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">63<small>%</small></div>
+        <div class="stat-label">of fathers say they spend too little meaningful time with their children</div>
+        <div class="stat-source">// IFS · 2025</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">1 in 3</div>
+        <div class="stat-label">churchgoing men has no close male friendship — no one who knows his real story</div>
+        <div class="stat-source">// Barna · 2023</div>
+      </div>
+    </div>
+
+    <div class="cols c50-50" style="flex:1;">
+      <div class="col">
+        <span class="col-label">▲ The formation gap</span>
+        <h3 class="col-heading">Most churches form men through Sunday attendance <span class="ital">alone.</span></h3>
+        <p class="col-body">The Lewis Center for Church Leadership (2024) calls this the collapse of <em>"faith formation by osmosis"</em> — the assumption that men sitting in pews are being formed through worship and preaching alone. In a post-pandemic environment, most highly committed attendees are in church one to two Sundays per month. That assumption is no longer sufficient.</p>
+        <p class="col-body">The man showing up faithfully in your congregation is almost certainly carrying <strong>real responsibility without real formation</strong>. He is not lazy. He is not faithless. He is a good man with insufficient tools.</p>
+      </div>
+      <div class="col">
+        <span class="col-label green">◆ What the research confirms</span>
+        <h3 class="col-heading">These men haven't abandoned faith — <span class="ital">they're hungry for something more.</span></h3>
+        <p class="col-body">Men's church attendance is rising — Barna's 2025 data shows men now outpace women (43% vs 36%), the first time in recorded survey history. Bible use among men climbed <strong>19% in a single year</strong>. Commitment to Christ among Millennial men has risen 19 points since 2019.</p>
+        <div class="pull">
+          <p>"He is not a man who has abandoned his faith. <span class="key">He is a man who has been faithful with insufficient tools.</span>"</p>
+          <cite>— Man Made Alive</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-foot">
+    <span>Man Made Alive · manmadealive.com · © 2026</span>
+    <span class="signoff">Stay steady. Train faithfully. Walk with brothers.</span>
+  </div>
+</div>
+
+<!-- ================================================================
+     PAGE 3 — VENN
+     ================================================================ -->
+<div class="page">
+  <div class="page-head">
+    <span class="head-left">◆ Man Made Alive · A Conversation for Pastors</span>
+    <span class="head-right">03 / 08</span>
+  </div>
+  <div class="page-body">
+    <span class="kicker">Why other approaches fall short</span>
+    <h1 class="page-title">Every program lands a man<br/><span class="ital">somewhere in the overlaps.</span></h1>
+    <div class="title-rule"></div>
+    <p class="speaker">Walk through the Venn verbally. Each overlap names something the pastor has probably watched happen in his own men's ministry. Let him make the connections himself.</p>
+
+    <div class="cols c45-55" style="flex:1;align-items:stretch;">
+      <div style="display:flex;align-items:center;justify-content:center;">
+        <svg viewBox="0 0 440 320" style="width:100%;max-height:330px;" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="vennSlate" cx="40%" cy="40%" r="60%">
+              <stop offset="0%" stop-color="#97b2bd" stop-opacity="0.55"/>
+              <stop offset="100%" stop-color="#4d6b78" stop-opacity="0.65"/>
+            </radialGradient>
+            <radialGradient id="vennGold" cx="60%" cy="40%" r="60%">
+              <stop offset="0%" stop-color="#e8c39a" stop-opacity="0.50"/>
+              <stop offset="100%" stop-color="#b8893f" stop-opacity="0.65"/>
+            </radialGradient>
+            <radialGradient id="vennGreen" cx="50%" cy="60%" r="60%">
+              <stop offset="0%" stop-color="#7ebd99" stop-opacity="0.50"/>
+              <stop offset="100%" stop-color="#4a8062" stop-opacity="0.65"/>
+            </radialGradient>
+          </defs>
+          <rect width="440" height="320" fill="#131519" rx="6"/>
+          <circle cx="160" cy="148" r="116" fill="url(#vennSlate)"/>
+          <circle cx="280" cy="148" r="116" fill="url(#vennGold)"/>
+          <circle cx="220" cy="232" r="116" fill="url(#vennGreen)"/>
+          <circle cx="220" cy="180" r="58" fill="rgba(10,10,11,0.55)" stroke="rgba(212,165,116,0.7)" stroke-width="1.8"/>
+          <!-- Circle labels -->
+          <text x="92" y="58" font-family="Oswald" font-size="9" font-weight="700" fill="#97b2bd" letter-spacing="2.4" text-anchor="middle">KNOWLEDGE</text>
+          <text x="92" y="76" font-family="Oswald" font-size="17" font-weight="700" fill="#f5f3ee" text-anchor="middle">TRUTH</text>
+          <text x="350" y="58" font-family="Oswald" font-size="9" font-weight="700" fill="#e8c39a" letter-spacing="2.4" text-anchor="middle">INSPIRATION</text>
+          <text x="350" y="76" font-family="Oswald" font-size="17" font-weight="700" fill="#f5f3ee" text-anchor="middle">VISION</text>
+          <text x="220" y="298" font-family="Oswald" font-size="9" font-weight="700" fill="#7ebd99" letter-spacing="2.4" text-anchor="middle">ACCOUNTABILITY</text>
+          <text x="220" y="314" font-family="Oswald" font-size="14" font-weight="700" fill="#f5f3ee" text-anchor="middle">BROTHERHOOD</text>
+          <!-- Overlap labels -->
+          <text x="220" y="120" font-family="Newsreader" font-size="11" font-style="italic" fill="rgba(245,243,238,0.92)" text-anchor="middle">The Conference</text>
+          <text x="220" y="134" font-family="JetBrains Mono" font-size="8" fill="rgba(245,243,238,0.55)" text-anchor="middle">// moves, doesn't hold</text>
+          <text x="158" y="218" font-family="Newsreader" font-size="11" font-style="italic" fill="rgba(245,243,238,0.92)" text-anchor="middle">The Curriculum</text>
+          <text x="158" y="232" font-family="JetBrains Mono" font-size="8" fill="rgba(245,243,238,0.55)" text-anchor="middle">// structures, feels like</text>
+          <text x="158" y="243" font-family="JetBrains Mono" font-size="8" fill="rgba(245,243,238,0.55)" text-anchor="middle">homework</text>
+          <text x="288" y="218" font-family="Newsreader" font-size="11" font-style="italic" fill="rgba(245,243,238,0.92)" text-anchor="middle">The Rally</text>
+          <text x="288" y="232" font-family="JetBrains Mono" font-size="8" fill="rgba(245,243,238,0.55)" text-anchor="middle">// fires up, misdirects</text>
+          <!-- Center -->
+          <text x="220" y="166" font-family="Oswald" font-size="8" font-weight="700" fill="#d4a574" letter-spacing="2.4" text-anchor="middle">MAN MADE ALIVE</text>
+          <text x="220" y="186" font-family="Newsreader" font-style="italic" font-size="20" font-weight="600" fill="#e8c39a" text-anchor="middle">Formation</text>
+          <text x="220" y="202" font-family="Inter" font-size="9" fill="rgba(245,243,238,0.7)" text-anchor="middle" font-style="italic">Lasting change lives here</text>
+        </svg>
+      </div>
+
+      <div class="col">
+        <span class="col-label">◆ The insight</span>
+        <h3 class="col-heading">Every men's program offers at least one of these three. <span class="ital">None alone, or in pairs, produces lasting formation.</span></h3>
+        <p class="col-body">Knowledge without vision and brotherhood produces <em>informed but unchanged</em> men. Inspiration without foundation and accountability produces the conference high — gone by Thursday. Accountability without truth or passion produces performance and shame.</p>
+        <p class="col-body">Even effective combinations of two fall short. The conference curriculum moves and teaches — but without brothers to sustain it, the change fades. The accountability group structures and holds — but without the theological foundation of truth, <strong>the direction is often wrong</strong>.</p>
+        <div class="pull">
+          <p>"Every program a man has tried landed him somewhere in the overlaps. <span class="key">MMA exists to bring him to the center.</span>"</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-foot">
+    <span>Man Made Alive · manmadealive.com · © 2026</span>
+    <span class="signoff">Stay steady. Train faithfully. Walk with brothers.</span>
+  </div>
+</div>
+
+<!-- ================================================================
+     PAGE 4 — HEAD / HEART / HANDS
+     ================================================================ -->
+<div class="page">
+  <div class="page-head">
+    <span class="head-left">◆ Man Made Alive · A Conversation for Pastors</span>
+    <span class="head-right">04 / 08</span>
+  </div>
+  <div class="page-body">
+    <span class="kicker">How formation actually works</span>
+    <h1 class="page-title">Truth must travel the full distance —<br/><span class="ital">head, heart, and hands.</span></h1>
+    <div class="title-rule"></div>
+    <p class="speaker">This is the theological page. Speak to the pastor as a fellow shepherd — man to man, pastor to pastor. The three Scripture references are the backbone.</p>
+
+    <div class="cols c40-60" style="flex:1;align-items:stretch;">
+      <div class="hhh">
+        <div class="hhh-bar head">
+          <div class="hhh-num">01 · HEAD</div>
+          <div class="hhh-word">The <span class="ital">Mind.</span></div>
+          <div class="hhh-verse">Romans 12:2 — <em>Be transformed by the renewing of your mind.</em></div>
+          <div class="hhh-module">// Module 1 · Truth</div>
+        </div>
+        <div class="hhh-bar heart">
+          <div class="hhh-num">02 · HEART</div>
+          <div class="hhh-word">The <span class="ital">Will.</span></div>
+          <div class="hhh-verse">Proverbs 4:23 — <em>Above all else, guard your heart, for everything flows from it.</em></div>
+          <div class="hhh-module">// Modules 2–3 · Training &amp; Tactics</div>
+        </div>
+        <div class="hhh-bar hands">
+          <div class="hhh-num">03 · HANDS</div>
+          <div class="hhh-word">The <span class="ital">Work.</span></div>
+          <div class="hhh-verse">James 2:17 — <em>Faith without works is dead.</em></div>
+          <div class="hhh-module">// Modules 4–5 · Traction &amp; Triumph</div>
+        </div>
+      </div>
+
+      <div class="col">
+        <span class="col-label">◆ The biblical framework</span>
+        <h3 class="col-heading">Information changes what a man knows. <span class="ital">Formation changes who a man is.</span></h3>
+        <p class="col-body">For lasting change to take root, truth must travel the full distance — <em>from the mind, through the heart, and out through the hands</em>. That journey is what formation is for.</p>
+        <p class="col-body"><strong>Most programs reach the head. Some reach the heart. Almost none stay long enough to reach the hands.</strong></p>
+        <p class="col-body">Man Made Alive is built for the full journey. The five modules are not arbitrary — they follow the exact sequence that Scripture describes and that formation actually requires.</p>
+        <p class="col-body">The transformation is the Spirit's work. The formation pathway is the structured environment in which a man <em>cooperates with that work</em> — through truth, through training, through brotherhood sustained over time.</p>
+        <div class="pull">
+          <p>"Most programs reach the head. Some reach the heart. <span class="key">Almost none stay long enough to reach the hands.</span>"</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-foot">
+    <span>Man Made Alive · manmadealive.com · © 2026</span>
+    <span class="signoff">Stay steady. Train faithfully. Walk with brothers.</span>
+  </div>
+</div>
+
+<!-- ================================================================
+     PAGE 5 — CONVICTIONS + PATHWAY
+     ================================================================ -->
+<div class="page">
+  <div class="page-head">
+    <span class="head-left">◆ Man Made Alive · A Conversation for Pastors</span>
+    <span class="head-right">05 / 08</span>
+  </div>
+  <div class="page-body">
+    <span class="kicker">What MMA is — and refuses to be</span>
+    <h1 class="page-title">The theological convictions<br/><span class="ital">and the five-stage pathway.</span></h1>
+    <div class="title-rule"></div>
+    <p class="speaker">This is the vetting page. A pastor needs to know the theological convictions before he can recommend this to his men. State them directly. Don't soften them.</p>
+
+    <div class="cols c50-50" style="flex:1;">
+      <div class="col">
+        <span class="col-label">◆ The theological convictions</span>
+        <p style="font-family:'Newsreader',serif;font-style:italic;font-size:12px;color:var(--gold-light);margin-bottom:8px;font-weight:500;">These are not positions. They are the load-bearing walls of everything MMA is built on.</p>
+
+        <div class="conviction">
+          <div class="conviction-head">Christ-Centered</div>
+          <div class="conviction-body">Jesus is not a role model among options. <em>He is the pattern</em> — the only complete picture of what strength, authority, gentleness, and submission look like rightly ordered. The goal is formation into the likeness of Christ.</div>
+        </div>
+        <div class="conviction">
+          <div class="conviction-head">Scripture-Anchored</div>
+          <div class="conviction-body">Scripture is the authority. Formation tools serve — they do not replace. The charter, the content, the community are <em>structured ways to walk more faithfully</em> in the direction Scripture points.</div>
+        </div>
+        <div class="conviction">
+          <div class="conviction-head">Complementarian</div>
+          <div class="conviction-body">MMA holds a complementarian view of manhood — not polemically, but as the theological foundation from which the entire vision of <em>responsibility and strength</em> is built.</div>
+        </div>
+        <div class="conviction">
+          <div class="conviction-head">Grounded in Historical Biblical Doctrine</div>
+          <div class="conviction-body">Transformation is God's work. Formation is a man's Spirit-empowered cooperation with that work. <em>Men do not train to earn life</em> — they train in response to life already given in Christ (Ephesians 2:4–5).</div>
+        </div>
+      </div>
+
+      <div class="col">
+        <span class="col-label green">→ The five-stage pathway</span>
+        <p style="font-family:'Newsreader',serif;font-style:italic;font-size:12px;color:var(--green-light);margin-bottom:8px;font-weight:500;">Each stage builds on the last in an order that cannot be reversed without weakening what follows.</p>
+
+        <div class="pathway-stage">
+          <div class="stage-num">01 · TRUTH</div>
+          <div>
+            <div class="stage-title"><span class="ital">Lifting the fog.</span></div>
+            <div class="stage-desc">Name the drift. Expose cultural distortions. Anchor in the pattern of Christ.</div>
+          </div>
+        </div>
+        <div class="pathway-stage">
+          <div class="stage-num">02 · TRAINING</div>
+          <div>
+            <div class="stage-title"><span class="ital">From trying to training.</span></div>
+            <div class="stage-desc">Build capacity through rhythm. Discipline as alignment, not punishment.</div>
+          </div>
+        </div>
+        <div class="pathway-stage">
+          <div class="stage-num">03 · TACTICS</div>
+          <div>
+            <div class="stage-title"><span class="ital">Where manhood is lived.</span></div>
+            <div class="stage-desc">Four arenas of responsibility. Strength aimed outward, faithfully.</div>
+          </div>
+        </div>
+        <div class="pathway-stage">
+          <div class="stage-num">04 · TRACTION</div>
+          <div>
+            <div class="stage-title"><span class="ital">Faithfulness over time.</span></div>
+            <div class="stage-desc">Brotherhood. Honest accountability. Momentum that doesn't depend on motivation.</div>
+          </div>
+        </div>
+        <div class="pathway-stage">
+          <div class="stage-num">05 · TRIUMPH</div>
+          <div>
+            <div class="stage-title"><span class="ital">The long arc.</span></div>
+            <div class="stage-desc">Legacy. Mission. A life aimed outward for the glory of God.</div>
+          </div>
+        </div>
+
+        <div class="callout" style="margin-top:10px;">
+          <p>MMA does not compete with the local church.<br/><span class="ital">It exists to strengthen the men already in yours.</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-foot">
+    <span>Man Made Alive · manmadealive.com · © 2026</span>
+    <span class="signoff">Stay steady. Train faithfully. Walk with brothers.</span>
+  </div>
+</div>
+
+<!-- ================================================================
+     PAGE 6 — THE MAN IN HIS CONGREGATION
+     ================================================================ -->
+<div class="page">
+  <div class="page-head">
+    <span class="head-left">◆ Man Made Alive · A Conversation for Pastors</span>
+    <span class="head-right">06 / 08</span>
+  </div>
+  <div class="page-body">
+    <span class="kicker">The man sitting in your congregation</span>
+    <h1 class="page-title">Not a demographic.<br/><span class="ital">A person you already know.</span></h1>
+    <div class="title-rule"></div>
+    <p class="speaker">Ask the pastor to think of three specific men while you walk through this. The goal is for him to see his people — not a category.</p>
+
+    <div class="cols c50-50" style="flex:1;">
+      <div class="col">
+        <span class="col-label">◆ Who he is</span>
+        <p class="col-body">He is between 28 and 55. Probably married, likely a father. He attends your church regularly — perhaps serving in some capacity. He works. He provides. He carries real weight. <em>He is not lazy, not faithless, not checked out.</em> By almost every external measure, he is a good man.</p>
+        <p class="col-body">And yet something feels persistently, quietly off. There is a tension between who he senses he is supposed to be and how he is actually living. He carries it without naming it. <strong>He suspects he is the only one who feels it.</strong> He is not.</p>
+        <div class="pull">
+          <p>"He is a man who is ready to engage <span class="key">a process that is honest about what formation actually requires</span> — and serious enough to ask something real of him."</p>
+          <cite>— Man Made Alive</cite>
+        </div>
+      </div>
+
+      <div class="col">
+        <span class="col-label">▲ What he is carrying</span>
+
+        <div class="trait">
+          <div class="trait-label">In his marriage</div>
+          <div class="trait-body">He loves his wife and is often <em>uncertain how to lead her</em>. He avoids conflict because conflict exhausts him. Important things go unsaid for months and surface wrong.</div>
+        </div>
+        <div class="trait">
+          <div class="trait-label">As a father</div>
+          <div class="trait-body">He knows the window with his children is not unlimited. He knows his presence matters. <em>He does not know how to close the gap</em> between his intentions and his actual impact.</div>
+        </div>
+        <div class="trait">
+          <div class="trait-label">In his friendships</div>
+          <div class="trait-body">He likely has men he watches football with. He almost certainly does not have a man who knows enough of his story to <em>notice when he starts drifting</em> — and say something about it.</div>
+        </div>
+        <div class="trait">
+          <div class="trait-label">In his faith</div>
+          <div class="trait-body">He is showing up. He is sincere. And he suspects that what he has been calling faith has mostly been <em>attendance</em> — and he does not know how to make it more than that.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-foot">
+    <span>Man Made Alive · manmadealive.com · © 2026</span>
+    <span class="signoff">Stay steady. Train faithfully. Walk with brothers.</span>
+  </div>
+</div>
+
+<!-- ================================================================
+     PAGE 7 — THE GRADUATED ASK (TIERS)
+     ================================================================ -->
+<div class="page">
+  <div class="page-head">
+    <span class="head-left">◆ Man Made Alive · A Conversation for Pastors</span>
+    <span class="head-right">07 / 08</span>
+  </div>
+  <div class="page-body">
+    <span class="kicker">How you can be part of this</span>
+    <h1 class="page-title">Three tiers. Every pastor<br/><span class="ital">chooses his own entry point.</span></h1>
+    <div class="title-rule"></div>
+    <p class="speaker">Present the tiers in order and let him land where he's ready. The first tier is a one-sentence yes. Don't pressure toward the third.</p>
+
+    <div class="tiers">
+      <div class="tier gold">
+        <span class="tier-tag">Tier 01 · Lowest barrier</span>
+        <h3 class="tier-title">Point your men <span class="ital">here.</span></h3>
+        <p class="tier-ask">The ask: one sentence — in a sermon, an email, or a bulletin.</p>
+        <p class="tier-body">Share the free three-video series with your men — <strong>no cost, no obligation, no formal partnership required</strong>. Simply tell your men: "There is a free resource I want you to look at." That is the entire first step. Many pastors begin here and go deeper as they see the fruit.</p>
+      </div>
+      <div class="tier slate">
+        <span class="tier-tag">Tier 02 · Active partner</span>
+        <h3 class="tier-title">Champion it <span class="ital">to your men.</span></h3>
+        <p class="tier-ask">The ask: a personal endorsement and ongoing promotion.</p>
+        <p class="tier-body">Personally recommend MMA to the men in your congregation — from the pulpit, in small groups, in pastoral conversations. Provide the free videos and charter as a <strong>church-wide resource</strong>. Receive regular updates on how your men are engaging the pathway.</p>
+      </div>
+      <div class="tier green">
+        <span class="tier-tag">Tier 03 · Church partnership</span>
+        <h3 class="tier-title">Integrate MMA <span class="ital">into your church.</span></h3>
+        <p class="tier-ask">The ask: a formal, ongoing partnership.</p>
+        <p class="tier-body">Integrate MMA into the discipleship infrastructure of your church — a <strong>structured formation pathway</strong> for men that complements your preaching and small-group ministry. Group pricing available. Nate available to speak, lead a workshop, or train small group leaders on the formation framework.</p>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:14px;">
+      <p>Every tier begins with the same first step:<br/><span class="ital">put the free video series in front of your men.</span></p>
+      <div class="sub">Everything else grows from there.</div>
+    </div>
+  </div>
+  <div class="page-foot">
+    <span>Man Made Alive · manmadealive.com · © 2026</span>
+    <span class="signoff">Stay steady. Train faithfully. Walk with brothers.</span>
+  </div>
+</div>
+
+<!-- ================================================================
+     PAGE 8 — CLOSE
+     ================================================================ -->
+<div class="page">
+  <div class="page-head">
+    <span class="head-left">◆ Man Made Alive · A Conversation for Pastors</span>
+    <span class="head-right">08 / 08</span>
+  </div>
+  <div class="page-body">
+    <span class="kicker">A final word</span>
+    <h1 class="page-title">The men in your congregation<br/><span class="ital">deserve more than this.</span></h1>
+    <div class="title-rule"></div>
+
+    <div class="cols c50-50" style="flex:1;">
+      <div class="col">
+        <p class="col-body">I built this program because <em>I needed it myself</em>. I was a pastor carrying real responsibility with genuine effort and sincere faith — and something still felt off. I tried what was available. None of it held.</p>
+        <p class="col-body">What I could not find was a formation pathway that was <strong>honest about the real problem, patient enough to work from the inside out, and serious enough to ask something real of a man</strong>.</p>
+        <p class="col-body">The men in your congregation deserve that. Not a weekend retreat they will forget by Thursday. Not an accountability group that produces performance rather than formation. <em>A pathway</em> — one that works at the pace formation actually requires, walks in the order it demands, and holds because it is carried by brothers rather than sustained by willpower alone.</p>
+        <p style="font-family:'Newsreader',serif;font-style:italic;font-size:14px;color:var(--gold-light);font-weight:500;margin-top:6px;line-height:1.5;">
+          I would be honored to walk this conversation further with you.
+        </p>
+        <div class="contact-block">
+          <div class="contact-name">Nate Roten</div>
+          <div class="contact-title">Pastor · Founder, Man Made Alive</div>
+          <div class="contact-detail">nate@manmadealive.com</div>
+          <div class="contact-detail">manmadealive.com</div>
+        </div>
+      </div>
+
+      <div class="col">
+        <span class="col-label green">→ What happens next</span>
+
+        <div class="next-step">
+          <div class="next-step-num">01</div>
+          <div>
+            <div class="next-step-title">Watch the free video series yourself.</div>
+            <div class="next-step-desc">Twenty-five minutes. The same three videos your men would receive. <em>Form your own honest opinion</em> before recommending anything.</div>
+          </div>
+        </div>
+        <div class="next-step">
+          <div class="next-step-num">02</div>
+          <div>
+            <div class="next-step-title">Share it with one man.</div>
+            <div class="next-step-desc">Think of the man who came to mind while reading page 06. Send him the link. <em>See what happens.</em></div>
+          </div>
+        </div>
+        <div class="next-step">
+          <div class="next-step-num">03</div>
+          <div>
+            <div class="next-step-title">Have a follow-up conversation.</div>
+            <div class="next-step-desc">If what you have seen today resonates — about the problem, the theology, the pathway — <em>reach out</em>. This conversation does not have to end here.</div>
+          </div>
+        </div>
+
+        <div class="callout" style="margin-top:10px;">
+          <p style="font-family:'Newsreader',serif;font-style:italic;font-size:16px;font-weight:500;text-transform:none;color:var(--gold);">"The glory of God is man fully alive."</p>
+          <div class="sub">— Irenaeus · 2nd Century</div>
+          <p style="margin-top:8px;font-size:14px;">That is what your men were <span class="ital">made for.</span></p>
+          <div class="sub">That is what this is for.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-foot">
+    <span>Man Made Alive · manmadealive.com · © 2026</span>
+    <span class="signoff">Stay steady. Train faithfully. Walk with brothers.</span>
+  </div>
+</div>
+
+</div><!-- /workspace -->
+</body>
+</html>
