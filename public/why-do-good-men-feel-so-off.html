@@ -1121,9 +1121,76 @@
 
   /* small svg helpers */
   .icon-svg { width: 22px; height: 22px; }
+
+  /* ===== VIDEO SECTION (top of page) ===== */
+  .video-section {
+    padding: 56px 32px 36px;
+    background: var(--bg);
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+  .video-wrap { max-width: 1060px; margin: 0 auto; }
+  .video-eye {
+    display: inline-block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+  .video-frame {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 16px;
+    background: #000;
+    border: 1px solid var(--border);
+    box-shadow: 0 30px 80px -20px rgba(0,0,0,0.7), 0 0 0 1px rgba(212,165,116,0.10);
+  }
+  .video-frame iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  .video-sub {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--muted);
+    margin: 18px 0 0;
+  }
+  @media (max-width: 720px) {
+    .video-section { padding: 36px 16px 24px; }
+    .video-frame { border-radius: 10px; }
+    .video-eye { margin-bottom: 14px; font-size: 11px; }
+  }
 </style>
 </head>
 <body>
+
+<!-- ============ VIDEO PLAYER ============ -->
+<section class="video-section" aria-label="Watch Video 1 of 3: Why Do Good Men Feel So Off?">
+  <div class="video-wrap">
+    <span class="video-eye">▶ Watch · Video 1 of 3</span>
+    <div class="video-frame">
+      <iframe
+        src="https://www.youtube.com/embed/bWanrgrx3sQ?rel=0&amp;modestbranding=1"
+        title="Why Do Good Men Feel So Off? · Man Made Alive · Video 1"
+        loading="lazy"
+        allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
+    <p class="video-sub">Press play. Or read on, the page makes the same case in text and image.</p>
+  </div>
+</section>
 
 <!-- ============ HERO ============ -->
 <div class="hero">
