@@ -97,6 +97,7 @@ const themeClasses: Record<
 
 const VideoSeriesSection = () => {
   const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -104,7 +105,7 @@ const VideoSeriesSection = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!firstName || !email) return;
+    if (!firstName || !lastName || !email) return;
 
     setIsSubmitting(true);
     try {
@@ -113,6 +114,7 @@ const VideoSeriesSection = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           firstName,
+          lastName,
           email,
           source: "video-series-section",
           submittedAt: new Date().toISOString(),
@@ -282,12 +284,20 @@ const VideoSeriesSection = () => {
               </div>
 
               <form onSubmit={handleSubmit} className="relative space-y-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   <Input
                     type="text"
                     placeholder="First name"
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
+                    required
+                    className="bg-background/60 border-border/50 focus:border-gold focus-visible:ring-gold/40 h-12 font-sans"
+                  />
+                  <Input
+                    type="text"
+                    placeholder="Last name"
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
                     required
                     className="bg-background/60 border-border/50 focus:border-gold focus-visible:ring-gold/40 h-12 font-sans"
                   />
@@ -304,7 +314,7 @@ const VideoSeriesSection = () => {
                   type="submit"
                   size="lg"
                   className="w-full text-base sm:text-lg py-7 h-auto font-display font-bold uppercase tracking-wider bg-mma-green hover:bg-mma-green-light text-charcoal border border-mma-green-light animate-pulse-green hover:scale-[1.02] transition-transform"
-                  disabled={isSubmitting || !firstName || !email}
+                  disabled={isSubmitting || !firstName || !lastName || !email}
                 >
                   {isSubmitting ? (
                     <>

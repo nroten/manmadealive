@@ -14,11 +14,11 @@ const Index = () => {
   return (
     <main className="min-h-screen bg-background overflow-x-hidden">
       <HeroSection />
-      <VideoSeriesSection />
       <PillarsSection />
       <ProofSection />
       <PathwaySection />
       <SecondCTASection />
+      <VideoSeriesSection />
       {/* <TestimonialsSection /> */} {/* TODO: Uncomment when real testimonials are available */}
       <FAQSection />
       <FinalCTASection />
