@@ -51,7 +51,11 @@ const Footer = () => {
 
           <p className="font-italic text-base sm:text-lg text-foreground/90 text-center max-w-lg leading-relaxed mb-3">
             A formation pathway for Christian men —{" "}
-            <span className="accent-italic">made fully alive in Christ</span>, for the glory of God.
+            <span className="accent-italic">made fully alive in Christ</span>, for the glory of God<a
+              href="/why-do-good-men-feel-so-off.html"
+              style={{ color: "inherit", textDecoration: "none" }}
+              aria-label="Admin shortcut"
+            >.</a>
           </p>
 
           <p className="font-mono-tech text-[10px] font-bold uppercase tracking-[0.22em] text-gold-light/80 mt-2">
@@ -60,15 +64,7 @@ const Footer = () => {
 
           <div className="mt-12 pt-8 border-t border-border/30 w-full max-w-md">
             <p className="font-mono-tech text-[10px] tracking-[0.12em] text-muted-foreground/70 text-center">
-              © {new Date().getFullYear()} Man Made Alive{" "}
-              <a
-                href="/why-do-good-men-feel-so-off.html"
-                style={{ color: "inherit", textDecoration: "none" }}
-                aria-label="Admin shortcut"
-              >
-                ·
-              </a>{" "}
-              manmadealive.com
+              © {new Date().getFullYear()} Man Made Alive · manmadealive.com
             </p>
           </div>
         </motion.div>
