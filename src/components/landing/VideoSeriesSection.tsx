@@ -9,7 +9,7 @@ import heroFog from "@/assets/hero-fog-driving.jpg";
 import teabag from "@/assets/v2-teabag.jpg";
 import riverWithBanks from "@/assets/river-with-banks.jpg";
 
-const WEBHOOK_URL = "https://twelvestonepress.app.n8n.cloud/webhook-test/form-submission";
+const WEBHOOK_URL = "https://hook.us2.make.com/rhra2687qxjq5wrrp65uztbsd5yv36rn";
 
 type Theme = "gold" | "slate" | "green";
 
